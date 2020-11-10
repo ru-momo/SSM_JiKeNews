@@ -19,4 +19,6 @@ public class UserInfo {
     private String name;            //用户昵称
     private String email;           //电子邮箱
     private String information;     //简介
+
+
 }
