@@ -23,13 +23,13 @@ public class UserInfoService {
 
     //根据主键进行查询
     public UserInfo getInfoById(Integer id){
-       return  (UserInfo)userInfoMapper.selectByPrimaryKey(id);
+       return  userInfoMapper.selectByPrimaryKey(id);
     }
 
 
 
     //按照条件查询
-    public List<UserInfo> getInfoByname(UserInfo userInfo){
+    public List<UserInfo> getInfoByName(UserInfo userInfo){
        return  userInfoMapper.select(userInfo);
 
     }
@@ -53,6 +53,7 @@ public class UserInfoService {
     public void updateInfo(UserInfo userInfo){
         userInfoMapper.updateByPrimaryKey(userInfo);
     }
+
 
 
 

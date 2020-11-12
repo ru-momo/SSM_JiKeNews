@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.suha.mapper.NewsImgInfoMapper">
+
+    <!-- 自定义映射规则-->
+    <resultMap id="ResultMap" type="com.suha.pojo.NewsImgInfo">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="news_id" jdbcType="INTEGER" property="newsId"/>
+        <result column="img" jdbcType="VARCHAR" property="img"/>
+    </resultMap>
+
+
+    <!--图片的分页查询 -->
+    <select id="getListInfoByPage" parameterType="map" resultMap="ResultMap">
+        select id, news_id, img from news_img_info where 1=1
+
+            <if test="img != null and img!= ''">
+                and img like '%${img}%'
+            </if>
+            <if test="startIndex != null and pageSize != null">
+                limit #{startIndex}, #{pageSize}
+            </if>
+    </select>
+
+
+    <!-- 获取图片总数-->
+    <select id="getListCountByPage" parameterType="map" resultType="int">
+        select count(id) from news_img_info where 1=1
+
+            <if test="img != null and img != ''">
+                and  and img like '%${img}%'
+            </if>
+
+    </select>
+
+</mapper>
