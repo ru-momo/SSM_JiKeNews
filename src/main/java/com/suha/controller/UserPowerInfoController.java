@@ -40,7 +40,7 @@ public class UserPowerInfoController {
 
     //根据id删除用户
     @ResponseBody
-    @RequestMapping(value = "getInfo",method = RequestMethod.GET)
+    @RequestMapping(value = "delInfo",method = RequestMethod.GET)
     public Map<String,Object> delInfo(Integer id){
         if(id == null){
             return ResponseCode.idIsNotNull();
