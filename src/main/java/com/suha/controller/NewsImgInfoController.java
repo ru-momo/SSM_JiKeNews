@@ -22,7 +22,7 @@ public class NewsImgInfoController {
 
     @RequestMapping("{path}")
     public String path(@PathVariable String path) {
-        return "admin/News" + path;
+        return "admin/News/" + path;
     }
 
 
