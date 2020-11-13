@@ -19,13 +19,13 @@
 <div class="navbar navbar-default">
     <div class="container">
         <div class="navbar-header">
-            <a href="front/index" class="navbar-brand"></a>
+            <a href="${pageContext.request.contextPath}/" class="navbar-brand"></a>
         </div>
         <label for="toggle-checkbox" id="toggle-label" class="visible-xs-inline-block">菜单</label>
         <input type="checkbox" class="hidden" id="toggle-checkbox">
         <div class="hidden-xs">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">首页</a></li>
+                <li class="active"><a href="${pageContext.request.contextPath}/">首页</a></li>
                 <li><a href="#">国内</a></li>
                 <li><a href="#">国际</a></li>
                 <li><a href="#">数读</a></li>
@@ -54,7 +54,7 @@
                 ，随后取得在央视平均收视33城3.01、46城2.974，单日最高3.918、市场份额10.131，湖南卫视平均收视破2的成绩，而大结局在央一凭接近3点的数据获2013年年度收视冠军，在优酷等12家视频网站的总播放量也达到了40亿，创下2013年单剧网络点击纪录[9]
                 ，高圆圆凭借该剧获得第十八届北京影视春燕奖最佳女主角奖[10] ；12月，在武侠剧《天龙八部》中客串逍遥派弟子李碧云一角[38] 。
             </div>
-            <img src="static/frontEnd/img/2-4.jpg">
+            <img src="${pageContext.request.contextPath}/static/frontEnd/img/2-4.jpg">
             <div>2012年2月，主演文艺爱情电影《高海拔之恋Ⅱ》，饰演内地知名女星丁圆圆[33]
                 ；7月，在陈凯歌执导现实题材电影《搜索》中塑造一个受到网络伤害而选择自杀的都市白领叶蓝秋，该片上映后以1.8亿的票房成绩在大陆收官，随后陆续在港台和海外上映[34]
             </div>
@@ -81,35 +81,35 @@
             <div class="card-body">
                 <div class="list">
                     <div class="item clearfix">
-                        <div class="col-xs-5 no-padding-h"><img src="https://dummyimage.com/1000x700/666/ccc"></div>
+                        <div class="col-xs-5 no-padding-h"><img src="${pageContext.request.contextPath}/static/frontEnd/img/juru.jpg"></div>
                         <div class="col-xs-7">
                             <div class="title">记结婚高圆圆与赵又廷北京登</div>
                             <div class="desc">25k阅读•35分钟前发布</div>
                         </div>
                     </div>
                     <div class="item clearfix">
-                        <div class="col-xs-5 no-padding-h"><img src="https://dummyimage.com/1000x700/666/ccc"></div>
+                        <div class="col-xs-5 no-padding-h"><img src="${pageContext.request.contextPath}/static/frontEnd/img/juru.jpg"></div>
                         <div class="col-xs-7">
                             <div class="title">记结婚高圆圆与赵又廷北京登</div>
                             <div class="desc">25k阅读•35分钟前发布</div>
                         </div>
                     </div>
                     <div class="item clearfix">
-                        <div class="col-xs-5 no-padding-h"><img src="https://dummyimage.com/1000x700/666/ccc"></div>
+                        <div class="col-xs-5 no-padding-h"><img src="${pageContext.request.contextPath}/static/frontEnd/img/juru.jpg"></div>
                         <div class="col-xs-7">
                             <div class="title">记结婚高圆圆与赵又廷北京登</div>
                             <div class="desc">25k阅读•35分钟前发布</div>
                         </div>
                     </div>
                     <div class="item clearfix">
-                        <div class="col-xs-5 no-padding-h"><img src="https://dummyimage.com/1000x700/666/ccc"></div>
+                        <div class="col-xs-5 no-padding-h"><img src="${pageContext.request.contextPath}/static/frontEnd/img/juru.jpg"></div>
                         <div class="col-xs-7">
                             <div class="title">记结婚高圆圆与赵又廷北京登</div>
                             <div class="desc">25k阅读•35分钟前发布</div>
                         </div>
                     </div>
                     <div class="item clearfix">
-                        <div class="col-xs-5 no-padding-h"><img src="https://dummyimage.com/1000x700/666/ccc"></div>
+                        <div class="col-xs-5 no-padding-h"><img src="${pageContext.request.contextPath}/static/frontEnd/img/juru.jpg"></div>
                         <div class="col-xs-7">
                             <div class="title">记结婚高圆圆与赵又廷北京登</div>
                             <div class="desc">25k阅读•35分钟前发布</div>
