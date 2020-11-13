@@ -11,13 +11,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <title>登录页面 - 光年(Light Year Admin)后台管理系统模板</title>
-    <link rel="icon" href="favicon.ico" type="image/ico">
+    <link rel="icon" href="${pageContext.request.contextPath}/static/backEnd/favicon.ico" type="image/ico">
     <meta name="keywords" content="LightYear,光年,后台模板,后台管理系统,光年HTML模板">
     <meta name="description" content="LightYear是一个基于Bootstrap v3.3.7的后台管理系统的HTML模板。">
     <meta name="author" content="yinqi">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/materialdesignicons.min.css" rel="stylesheet">
-    <link href="css/style.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/backEnd/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/backEnd/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/backEnd/css/style.min.css" rel="stylesheet">
     <style>
         .lyear-wrapper {
             position: relative;
@@ -62,7 +62,7 @@
     <div class="lyear-login">
         <div class="login-center">
             <div class="login-header text-center">
-                <a href="index.html"> <img alt="light year admin" src="images/logo-sidebar.png"> </a>
+                <a href="${pageContext.request.contextPath}/end/index"> <img alt="light year admin" src="${pageContext.request.contextPath}/static/backEnd/images/logo-sidebar.png"> </a>
             </div>
             <form action="#!" method="post">
                 <div class="form-group has-feedback feedback-left">
@@ -79,11 +79,11 @@
                         <span class="mdi mdi-check-all form-control-feedback" aria-hidden="true"></span>
                     </div>
                     <div class="col-xs-5">
-                        <img src="images/captcha.png" class="pull-right" id="captcha" style="cursor: pointer;" onclick="this.src=this.src+'?d='+Math.random();" title="点击刷新" alt="captcha">
+                        <img src="${pageContext.request.contextPath}/static/backEnd/images/captcha.png" class="pull-right" id="captcha" style="cursor: pointer;" onclick="this.src=this.src+'?d='+Math.random();" title="点击刷新" alt="captcha">
                     </div>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-block btn-primary" type="button" onclick="location.href='index.html'">立即登录</button>
+                    <button class="btn btn-block btn-primary" type="button" onclick="location.href='${pageContext.request.contextPath}/end/index'">立即登录</button>
                 </div>
             </form>
             <hr>
@@ -93,8 +93,8 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/bootstrap.min.js"></script>
 <script type="text/javascript">;</script>
 </body>
 </html>

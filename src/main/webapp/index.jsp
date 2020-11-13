@@ -34,6 +34,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="front/login">登陆</a></li>
                 <li><a href="front/signup">注册</a></li>
+                <li><a href="${pageContext.request.contextPath}/end/index">后台</a></li>
             </ul>
         </div>
     </div>
