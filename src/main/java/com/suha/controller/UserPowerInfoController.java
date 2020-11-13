@@ -54,7 +54,7 @@ public class UserPowerInfoController {
 
     }
 
-    //根据id查询单个用户
+    //根据id查询单个用户11
     @RequestMapping(value = "getInfo",method = RequestMethod.GET)
     public String get(Integer id, Model model){
         if(id == null){
