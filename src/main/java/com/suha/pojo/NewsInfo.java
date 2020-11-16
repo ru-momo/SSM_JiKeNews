@@ -1,5 +1,6 @@
 package com.suha.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 
@@ -18,6 +19,8 @@ public class NewsInfo {
     private String title;  //新闻标题
     private String introduction;   //描述
     private String content;    //内容
+
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date pubdate;     //发布日期
     private Integer state;    //状态
 
