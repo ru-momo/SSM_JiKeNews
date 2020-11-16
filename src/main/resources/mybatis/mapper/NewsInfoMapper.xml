@@ -11,6 +11,7 @@
         <result column="pubdate" jdbcType="TIMESTAMP" property="pubdate"/>
         <result column="state" jdbcType="VARCHAR" property="state"/>
     </resultMap>
+
     <!--sql片段-->
     <sql id="news_info_where">
         <where>
