@@ -271,9 +271,9 @@
                                         <div class="form-controls">
 
                                             <ul class="list-inline clearfix lyear-uploads-pic" id="imgAll">
-                                                <!-- <li class="col-xs-4 col-sm-3 col-md-2">
+                                                <li class="col-xs-4 col-sm-3 col-md-2">
                                                   <figure>
-                                                    <img src="images/gallery/15.jpg" alt="图片一">
+                                                    <img src="${pageContext.request.contextPath}/static/backEnd/images/gallery/15.jpg" alt="图片一">
                                                     <figcaption>
                                                       <a class="btn btn-round btn-square btn-primary" href="#!"><i
                                                           class="mdi mdi-eye"></i></a>
@@ -284,7 +284,7 @@
                                                 </li>
                                                 <li class="col-xs-4 col-sm-3 col-md-2">
                                                   <figure>
-                                                    <img src="images/gallery/16.jpg" alt="图片二">
+                                                    <img src="${pageContext.request.contextPath}/static/backEnd/images/gallery/16.jpg" alt="图片二">
                                                     <figcaption>
                                                       <a class="btn btn-round btn-square btn-primary" href="#!"><i
                                                           class="mdi mdi-eye"></i></a>
@@ -295,7 +295,7 @@
                                                 </li>
                                                 <li class="col-xs-4 col-sm-3 col-md-2">
                                                   <figure>
-                                                    <img src="images/gallery/17.jpg" alt="图片三">
+                                                    <img src="${pageContext.request.contextPath}/static/backEnd/images/gallery/17.jpg" alt="图片三">
                                                     <figcaption>
                                                       <a class="btn btn-round btn-square btn-primary" href="#!"><i
                                                           class="mdi mdi-eye"></i></a>
@@ -303,7 +303,7 @@
                                                           class="mdi mdi-delete"></i></a>
                                                     </figcaption>
                                                   </figure>
-                                                </li> -->
+                                                </li>
                                                 <li class="col-xs-4 col-sm-3 col-md-2" id="nodelast">
                                                     <a class="pic-add" id="add-pic-btn" href="#!" title="点击上传" onclick="pull()"></a>
                                                 </li>

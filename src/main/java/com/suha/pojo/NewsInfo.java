@@ -16,7 +16,7 @@ public class NewsInfo {
     private Integer id;  //新闻编号
     private String type;  //新闻类型
     private String title;  //新闻标题
-    private String describe;   //描述
+    private String introduction;   //描述
     private String content;    //内容
     private Date pubdate;     //发布日期
     private Integer state;    //状态

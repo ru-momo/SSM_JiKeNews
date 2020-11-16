@@ -2,6 +2,7 @@ package com.suha.controller;
 
 
 import com.suha.pojo.UserInfo;
+import com.suha.service.BaseService;
 import com.suha.service.UserInfoService;
 import com.suha.util.ResponseCode;
 import org.springframework.beans.factory.annotation.Autowired;
