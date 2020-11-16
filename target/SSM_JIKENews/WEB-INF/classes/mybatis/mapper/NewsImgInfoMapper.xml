@@ -33,4 +33,13 @@
 
     </select>
 
+
+    <!--批量删除 -->
+    <delete id="delList">
+        delete from news_img_info where id in
+        <foreach collection="array" item="ids" open="(" separator="," close=")">
+        #{ids}
+        </foreach>
+    </delete>
+
 </mapper>

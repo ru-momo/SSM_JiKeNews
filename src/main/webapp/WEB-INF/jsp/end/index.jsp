@@ -38,7 +38,7 @@
                         <li class="nav-item nav-item-has-subnav">
                             <a href="javascript:void(0)"><i class="mdi mdi-file-outline"></i> 示例页面</a>
                             <ul class="nav nav-subnav">
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesDoc.jsp">文档列表</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesImg.jsp">文档列表</a> </li>
                                 <li> <a href="${pageContext.request.contextPath}/end/pagesGallery.jsp">图库列表</a> </li>
                                 <li> <a href="${pageContext.request.contextPath}/end/pagesConfig.jsp">网站配置</a> </li>
                                 <li> <a href="${pageContext.request.contextPath}/end/pagesRabc.jsp">设置权限</a> </li>

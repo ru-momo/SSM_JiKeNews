@@ -42,7 +42,7 @@
                         <li class="nav-item nav-item-has-subnav active open">
                             <a href="javascript:void(0)"><i class="mdi mdi-file-outline"></i> 示例页面</a>
                             <ul class="nav nav-subnav">
-                                <li class="active"> <a href="${pageContext.request.contextPath}/end/pagesDoc">文档列表</a> </li>
+                                <li class="active"> <a href="${pageContext.request.contextPath}/end/pagesImg">文档列表</a> </li>
                                 <li> <a href="${pageContext.request.contextPath}/end/pagesGallery">图库列表</a> </li>
                                 <li> <a href="${pageContext.request.contextPath}/end/pagesConfig">网站配置</a> </li>
                                 <li> <a href="${pageContext.request.contextPath}/end/pagesRabc">设置权限</a> </li>
@@ -455,7 +455,7 @@
             }
         };
     }
-    /*封面图-批量删除*/
+    //批量删除
     function del(){
         var r=confirm("是否确认删除选中的信息？");
         if(r==true){
@@ -473,7 +473,7 @@
                     n++;
                 }
             }
-            //上面会拼接出一个名为ids的数组ids=1&ids=2&ids=3&ids=4……
+
             $.get("deleteByIds",ids,function(data){
                 if(data=="ok"){
                     alert("删除成功!");
