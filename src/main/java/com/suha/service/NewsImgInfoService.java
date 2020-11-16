@@ -14,7 +14,7 @@ import java.util.Map;
 
 
 @Service
-public class NewsImgInfoService {
+public class NewsImgInfoService extends BaseService<NewsImgInfo> {
 
     //自动注入
     @Autowired
@@ -67,6 +67,7 @@ public class NewsImgInfoService {
     public List<NewsImgInfo> getListImgInfo(){
         return newsImgInfoMapper.selectAll();
     }
+
 
 
     /**

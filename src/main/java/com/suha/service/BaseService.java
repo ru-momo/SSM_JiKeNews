@@ -17,6 +17,7 @@ public class BaseService<T> {
     @Autowired
     private Mapper<T> mapper;
 
+
     /**
      * 添加
      * @param record
