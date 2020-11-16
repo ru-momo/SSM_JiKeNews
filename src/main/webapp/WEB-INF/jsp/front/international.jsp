@@ -12,6 +12,6 @@
 
 </head>
 <body>
-<h1>社会</h1>
+<h1>国际</h1>
 </body>
 </html>
