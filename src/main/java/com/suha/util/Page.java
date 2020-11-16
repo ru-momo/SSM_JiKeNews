@@ -9,31 +9,44 @@ public class Page<T> implements Serializable {
         private  int page;
         private int size;
         private List<T> rows;
-        public int getTotal(){
+        private int sum;
+
+    @Override
+    public String toString() {
+        return "Page{" +
+                "total=" + total +
+                ", page=" + page +
+                ", size=" + size +
+                ", rows=" + rows +
+                ", sum=" + sum +
+                '}';
+    }
+
+    public int getSum() {
+        return sum;
+    }
+
+    public void setSum(int sum) {
+        this.sum = sum;
+    }
+
+    public int getTotal(){
             return total;
         }
 
-        public Page() {
-        }
 
-        public Page(int total, int page, int size, List<T> rows) {
-            this.total = total;
-            this.page = page;
-            this.size = size;
-            this.rows = rows;
-        }
+    public Page() {
+    }
 
-        @Override
-        public String toString() {
-            return "Page{" +
-                    "total=" + total +
-                    ", page=" + page +
-                    ", size=" + size +
-                    ", rows=" + rows +
-                    '}';
-        }
+    public Page(int total, int page, int size, List<T> rows, int sum) {
+        this.total = total;
+        this.page = page;
+        this.size = size;
+        this.rows = rows;
+        this.sum = sum;
+    }
 
-        public void setTotal(int total) {
+    public void setTotal(int total) {
             this.total = total;
         }
 

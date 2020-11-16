@@ -15,7 +15,7 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("admin")
-public class UserInfoController extends BaseService<UserInfo> {
+public class UserInfoController {
 
     @Autowired
     private UserInfoService userInfoService;
