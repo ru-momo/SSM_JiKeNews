@@ -36,7 +36,7 @@ public class UserInfoService {
 
 
     //按照条件查询
-    public List<UserInfo> getInfoByname(UserInfo userInfo){
+    public List<UserInfo> getInfoByName(UserInfo userInfo){
        return userInfoMapper.select(userInfo);
 
     }

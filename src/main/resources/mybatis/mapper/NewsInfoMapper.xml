@@ -19,6 +19,7 @@
             <if test="title !=null and title!=''">
                 and title like '%${title}'
             </if>
+            and state = 1
         </where>
     </sql>
 
@@ -26,6 +27,7 @@
     <select id="getListInfoByPage" parameterType="map" resultMap="BaseResultMap">
         select id,type,title,introduction,content,pubdate,state from news_info
         <include refid="news_info_where"></include>
+        order by pubdate desc
         <if test="startIndex !=null and pageSize !=null">
             limit #{startIndex},#{pageSize}
         </if>

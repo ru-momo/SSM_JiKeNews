@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 
-@Service
+//@Service
 public class BaseService<T> {
     @Autowired
     private Mapper<T> mapper;
