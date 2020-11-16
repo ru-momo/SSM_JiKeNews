@@ -65,7 +65,7 @@ public class UserInfoTest {
     public void queryByName(){
         UserInfo info = new UserInfo();
         info.setUserName("王小二");
-        List<UserInfo> infoList = userInfoService.getInfoByName(info);
+        List<UserInfo> infoList = userInfoService.getInfoByname(info);
         for (UserInfo item :infoList) {
             System.out.println(item);
         }

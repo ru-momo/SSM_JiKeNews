@@ -15,7 +15,7 @@
         select id, news_id, img from news_img_info where 1=1
 
             <if test="img != null and img!= ''">
-                and img like '%${img}%'
+                and img like '%${name}%'
             </if>
             <if test="startIndex != null and pageSize != null">
                 limit #{startIndex}, #{pageSize}
@@ -28,7 +28,7 @@
         select count(id) from news_img_info where 1=1
 
             <if test="img != null and img != ''">
-                and  and img like '%${img}%'
+                and  and img like '%${name}%'
             </if>
 
     </select>
