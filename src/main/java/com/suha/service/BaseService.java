@@ -121,7 +121,7 @@ public class BaseService<T> {
                 page.setRows(list);
                 page.setTotal(total);
                 page.setSum(totalCount); // 设置总条数
-                rs.set(key, page, 5*60);
+               // rs.set(key, page, 5*60);
             } catch (Exception e) {
                 // TODO: handle exception
                 e.printStackTrace();

@@ -301,7 +301,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="btn-group">
-                                                        <a class="btn btn-xs btn-default" href="javascript:void(0)" onclick="del(${page.id})" title="删除" data-toggle="tooltip"><i
+                                                        <a class="btn btn-xs btn-default" href="javascript:void(0)" onclick="delInfo(${page.id})" title="删除" data-toggle="tooltip"><i
                                                                 class="mdi mdi-window-close"></i></a>
                                                     </div>
                                                 </td>
@@ -390,7 +390,7 @@
     });
     
     
-    function del(id) {
+    function delInfo(id) {
         if(confirm("确定要删除吗？")){
             $.ajax({
                 url:"delInfo?id=" + id,
