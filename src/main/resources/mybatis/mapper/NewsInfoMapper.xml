@@ -12,6 +12,7 @@
         <result column="state" jdbcType="VARCHAR" property="state"/>
     </resultMap>
 
+
     <!--sql片段-->
     <sql id="news_info_where">
         <where>
