@@ -14,7 +14,7 @@ import java.util.Map;
 
 
 @Service
-public class NewsImgInfoService extends BaseService<NewsImgInfo> {
+public class NewsImgInfoService {
 
     //自动注入
     @Autowired
