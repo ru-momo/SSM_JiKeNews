@@ -11,7 +11,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <title>新增文档 - 光年(Light Year Admin)后台管理系统模板</title>
-    <link rel="icon" href="${pageContext.request.contextPath}/static/bankEnd/favicon.ico" type="image/ico">
+    <link rel="icon" href="${pageContext.request.contextPath}/static/backEnd/favicon.ico" type="image/ico">
     <meta name="keywords" content="LightYear,光年,后台模板,后台管理系统,光年HTML模板">
     <meta name="description" content="LightYear是一个基于Bootstrap v3.3.7的后台管理系统的HTML模板。">
     <meta name="author" content="yinqi">
@@ -30,7 +30,7 @@
 
             <!-- logo -->
             <div id="logo" class="sidebar-header">
-                <a href="${pageContext.request.contextPath}/end/index"><img src="${pageContext.request.contextPath}/static/bankEnd/images/logo-sidebar.png" title="LightYear" alt="LightYear" /></a>
+                <a href="${pageContext.request.contextPath}/end/index"><img src="${pageContext.request.contextPath}/static/backEnd/images/logo-sidebar.png" title="LightYear" alt="LightYear" /></a>
             </div>
             <div class="lyear-layout-sidebar-scroll">
 
@@ -40,14 +40,14 @@
                         <li class="nav-item nav-item-has-subnav active open">
                             <a href="javascript:void(0)"><i class="mdi mdi-file-outline"></i> 示例页面</a>
                             <ul class="nav nav-subnav">
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesDoc.jsp">文档列表</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesGallery.jsp">图库列表</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesConfig.jsp">网站配置</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesRabc.jsp">设置权限</a> </li>
-                                <li class="active"> <a href="${pageContext.request.contextPath}/end/pagesAddDoc.jsp">新增文档</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesGuide.jsp">表单向导</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesLogin.jsp">登录页面</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesError.jsp">错误页面</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesDoc">文档列表</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesGallery">图库列表</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesConfig">网站配置</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesRabc">设置权限</a> </li>
+                                <li class="active"> <a href="${pageContext.request.contextPath}/end/pagesAddDoc">新增文档</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesGuide">表单向导</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesLogin">登录页面</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesError">错误页面</a> </li>
                             </ul>
                         </li>
                     </ul>
@@ -76,11 +76,11 @@
                     <ul class="topbar-right">
                         <li class="dropdown dropdown-profile">
                             <a href="javascript:void(0)" data-toggle="dropdown">
-                                <img class="img-avatar img-avatar-48 m-r-10" src="${pageContext.request.contextPath}/images/users/avatar.jpg" alt="笔下光年" />
+                                <img class="img-avatar img-avatar-48 m-r-10" src="${pageContext.request.contextPath}/static/backEnd/images/users/avatar.jpg" alt="笔下光年" />
                                 <span>笔下光年 <span class="caret"></span></span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-right">
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesProfile"><i class="mdi mdi-account"></i> 个人信息</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesProfileLogin"><i class="mdi mdi-account"></i> 个人信息</a> </li>
                                 <li> <a href="${pageContext.request.contextPath}/end/pagesEditPwd"><i class="mdi mdi-lock-outline"></i> 修改密码</a> </li>
                                 <li> <a href="javascript:void(0)"><i class="mdi mdi-delete"></i> 清空缓存</a></li>
                                 <li class="divider"></li>
@@ -353,18 +353,18 @@
     </div>
 </div>
 
-<script type="text/javascript" src="static/bankEnd/js/jquery.min.js"></script>
-<script type="text/javascript" src="static/bankEnd/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="static/bankEnd/js/perfect-scrollbar.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/perfect-scrollbar.min.js"></script>
 <!--标签插件-->
-<script src="static/bankEnd/js/jquery-tags-input/jquery.tagsinput.min.js"></script>
-<script type="text/javascript" src="static/bankEnd/js/main.min.js"></script>
+<script src="${pageContext.request.contextPath}/static/backEnd/js/jquery-tags-input/jquery.tagsinput.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/main.min.js"></script>
 
 <script type="text/javascript">
     function pull() {
         var html = "<li class='col-xs-4 col-sm-3 col-md-2' id='node2' style='display: none;'>" +
             "<figure>" +
-            "<img src='images/gallery/17.jpg' alt='图片二'>" +
+            "<img src='${pageContext.request.contextPath}/static/backEnd/images/gallery/17.jpg' alt='图片二'>" +
             "<figcaption>" +
             "<a class='btn btn-round btn-square btn-primary' href='#!''><i class='mdi mdi-eye'></i></a>" +
             "<a class='btn btn-round btn-square btn-danger' href='#!''><i class='mdi mdi-delete'></i></a>" +

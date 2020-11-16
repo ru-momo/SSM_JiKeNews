@@ -17,13 +17,13 @@
 <div class="navbar navbar-default">
     <div class="container">
         <div class="navbar-header">
-            <a href="${pageContext.request.contextPath}/" class="navbar-brand"></a>
+            <a href="${pageContext.request.contextPath}" class="navbar-brand"></a>
         </div>
         <label for="toggle-checkbox" id="toggle-label" class="visible-xs-inline-block">菜单</label>
         <input type="checkbox" class="hidden" id="toggle-checkbox">
         <div class="hidden-xs">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="${pageContext.request.contextPath}/">首页</a></li>
+                <li class="active"><a href="${pageContext.request.contextPath}">首页</a></li>
                 <li><a href="${pageContext.request.contextPath}/front/internal">国内</a></li>
                 <li><a href="${pageContext.request.contextPath}/front/external">国际</a></li>
                 <li><a href="${pageContext.request.contextPath}/front/fastRead">速读</a></li>

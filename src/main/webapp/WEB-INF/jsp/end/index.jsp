@@ -38,7 +38,7 @@
                         <li class="nav-item nav-item-has-subnav">
                             <a href="javascript:void(0)"><i class="mdi mdi-file-outline"></i> 示例页面</a>
                             <ul class="nav nav-subnav">
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesDoc">文档列表</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesDoc.jsp">文档列表</a> </li>
                                 <li> <a href="${pageContext.request.contextPath}/end/pagesGallery.jsp">图库列表</a> </li>
                                 <li> <a href="${pageContext.request.contextPath}/end/pagesConfig.jsp">网站配置</a> </li>
                                 <li> <a href="${pageContext.request.contextPath}/end/pagesRabc.jsp">设置权限</a> </li>
@@ -445,13 +445,13 @@
     </div>
 </div>
 
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/jquery.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/perfect-scrollbar.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/main.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/bankEnd/js/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/bankEnd/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/bankEnd/js/perfect-scrollbar.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/bankEnd/js/main.min.js"></script>
 
 <!--图表插件-->
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/Chart.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/bankEnd/js/Chart.js"></script>
 <script type="text/javascript">
     $(document).ready(function (e) {
         var $dashChartBarsCnt = jQuery('.js-chartjs-bars')[0].getContext('2d'),
