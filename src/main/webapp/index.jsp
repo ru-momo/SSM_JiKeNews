@@ -12,6 +12,9 @@
     <title>极客开发者</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/frontEnd/css/bootstrap.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/frontEnd/css/main.css">
+    <script type="text/javascript" src="static/frontEnd/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="static/frontEnd/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="static/frontEnd/index/main.js"></script>
 </head>
 <body>
 
@@ -26,10 +29,10 @@
         <div class="hidden-xs">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="${pageContext.request.contextPath}/">首页</a></li>
-                <li><a href="front/internal">国内</a></li>
-                <li><a href="front/external">国际</a></li>
-                <li><a href="front/fastRead">速读</a></li>
-                <li><a href="front/society">社会</a></li>
+                <li><a href="front/international">国际</a></li>
+                <li><a href="front/game">游戏</a></li>
+                <li><a href="front/automobile">汽车</a></li>
+                <li><a href="front/science">科技</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="front/login">登陆</a></li>
@@ -44,13 +47,9 @@
         <div class="col-sm-2">
             <div class="list-group side-bar hidden-xs">
                 <a href="#" class="list-group-item active">综合</a>
-                <a href="#" class="list-group-item">综合</a>
-                <a href="#" class="list-group-item">综合</a>
-                <a href="#" class="list-group-item">综合</a>
-                <a href="#" class="list-group-item">综合</a>
-                <a href="#" class="list-group-item">综合</a>
-                <a href="#" class="list-group-item">综合</a>
-                <a href="#" class="list-group-item">综合</a>
+                <a href="#" class="list-group-item">电影</a>
+                <a href="#" class="list-group-item">音乐</a>
+                <a href="#" class="list-group-item">明星</a>
             </div>
         </div>
         <div class="col-sm-7">
