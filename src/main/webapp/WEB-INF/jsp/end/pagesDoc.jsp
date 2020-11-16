@@ -16,9 +16,9 @@
     <meta name="keywords" content="LightYear,光年,后台模板,后台管理系统,光年HTML模板">
     <meta name="description" content="LightYear是一个基于Bootstrap v3.3.7的后台管理系统的HTML模板。">
     <meta name="author" content="yinqi">
-    <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/css/materialdesignicons.min.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/css/style.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/backEnd/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/backEnd/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/backEnd/css/style.min.css" rel="stylesheet">
 </head>
 
 <body>

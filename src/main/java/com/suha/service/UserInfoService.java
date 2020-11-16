@@ -23,7 +23,7 @@ public class UserInfoService {
 
     //根据主键进行查询
     public UserInfo getInfoById(Integer id){
-       return  userInfoMapper.selectByPrimaryKey(id);
+       return userInfoMapper.selectByPrimaryKey(id);
     }
 
 

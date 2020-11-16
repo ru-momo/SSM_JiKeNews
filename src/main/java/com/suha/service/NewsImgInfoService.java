@@ -31,6 +31,16 @@ public class NewsImgInfoService {
         newsImgInfoMapper.insert(newsImgInfo);
     }
 
+    /**
+     * 批量删除
+     * @param ids
+     */
+    public void deleteList(Integer[] ids){
+        newsImgInfoMapper.delList(ids);
+    }
+
+
+
 
     /**
      * 删除图片信息
@@ -74,8 +84,9 @@ public class NewsImgInfoService {
       * @param id
      * @return
      */
-    public NewsImgInfo getImgInfoById(Integer id){
+    public NewsImgInfo getInfoById(Integer id){
         return newsImgInfoMapper.selectByPrimaryKey(id);
+
     }
 
 
@@ -134,7 +145,7 @@ public class NewsImgInfoService {
             page.setSum(totalCount);//数据总数
 
             //保存在redis中
-            redisService.set(key, page, 60*10);
+            //redisService.set(key, page, 60*10);
 
 
         }

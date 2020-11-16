@@ -13,16 +13,16 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-//@RequestMapping("admin")
+@RequestMapping("admin")
 public class UserInfoController {
 
     @Autowired
     private UserInfoService userInfoService;
 
-//    @RequestMapping("{path}")
-//    public String path(@PathVariable String path) {
-//        return "admin/" + path;
-//    }
+    @RequestMapping("{path}")
+    public String path(@PathVariable String path) {
+        return "admin/" + path;
+    }
 
     /**
      *
