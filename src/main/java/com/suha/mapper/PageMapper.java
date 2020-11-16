@@ -11,4 +11,7 @@ public interface PageMapper<T> {
 
     //查询总数量
     Integer getListCountByPage(Map<String ,Object> map);
+
+
+    
 }
