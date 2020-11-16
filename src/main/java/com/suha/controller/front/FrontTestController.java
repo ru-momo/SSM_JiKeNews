@@ -10,7 +10,6 @@ public class FrontTestController {
     @RequestMapping("front/{path}")
     public String mytest(@PathVariable String path){
 
-
         return "front/"+path;
     }
 

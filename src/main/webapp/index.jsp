@@ -59,7 +59,7 @@
                         <img src="static/frontEnd/img/002.jpg">
                     </div>
                     <div class="col-xs-7">
-                        <a href="front/news.jsp" class="title">医保异地结算已实现：只需4步，一分钟看懂怎么办</a>
+                        <a href="front/news" class="title">医保异地结算已实现：只需4步，一分钟看懂怎么办</a>
                         <div class="info">
                             <span class="avatar"><img src="static/frontEnd/img/logo.png"></span>
                             <span>王花花</span>•
@@ -73,7 +73,7 @@
                         <img src="static/frontEnd/img/003.jpg">
                     </div>
                     <div class="col-xs-7">
-                        <a href="/front/news.jsp" class="title">医保异地结算已实现：只需4步，一分钟看懂怎么办</a>
+                        <a href="front/news" class="title">医保异地结算已实现：只需4步，一分钟看懂怎么办</a>
                         <div class="info">
                             <span class="avatar"><img src="/static/frontEnd/img/logo.png"></span>
                             <span>王花花</span>•
@@ -87,7 +87,7 @@
                         <img src="static/frontEnd/img/004.jpg">
                     </div>
                     <div class="col-xs-7">
-                        <a href="/front/news.jsp" class="title">医保异地结算已实现：只需4步，一分钟看懂怎么办</a>
+                        <a href="front/news" class="title">医保异地结算已实现：只需4步，一分钟看懂怎么办</a>
                         <div class="info">
                             <span class="avatar"><img src="static/frontEnd/img/logo.png"></span>
                             <span>王花花</span>•
@@ -101,7 +101,7 @@
                         <img src="static/frontEnd/img/005.jpg">
                     </div>
                     <div class="col-xs-7">
-                        <a href="front/news.jsp" class="title">医保异地结算已实现：只需4步，一分钟看懂怎么办</a>
+                        <a href="front/news" class="title">医保异地结算已实现：只需4步，一分钟看懂怎么办</a>
                         <div class="info">
                             <span class="avatar"><img src="static/frontEnd/img/logo.png"></span>
                             <span>王花花</span>•
@@ -118,7 +118,7 @@
             </div>
             <div class="side-bar-card flag clearfix">
                 <div class="col-xs-5">
-                    <img src="/static/frontEnd/img/1-1.png">
+                    <img src="static/frontEnd/img/1-1.png">
                 </div>
                 <div class="col-xs-7">
                     <div class="text-lg">有害信息举报专区</div>
