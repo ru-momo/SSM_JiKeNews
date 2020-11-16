@@ -1,64 +1,76 @@
 package com.suha.service;
 
 import com.mysql.cj.util.StringUtils;
-import com.suha.mapper.UserInfoMapper;
-import com.suha.pojo.UserInfo;
 import com.suha.util.Page;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
+import tk.mybatis.mapper.common.Mapper;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Service
-public class UserInfoService {
+public class BaseService<T> {
 
     @Autowired
-    private UserInfoMapper userInfoMapper;
+    private Mapper<T> mapper;
 
     @Autowired
     private RedisService rs;
 
-    //查询所有
-    public List<UserInfo> queryAll(){
-        return userInfoMapper.selectAll();
+    /**
+     * 添加
+     * @param record
+     */
+    public void addInfo(T record){
+        mapper.insert(record);
     }
 
-
-    //根据主键进行查询
-    public UserInfo getInfoById(Integer id){
-       return userInfoMapper.selectByPrimaryKey(id);
+    /**
+     * 删除
+     */
+    public void delInfo(Integer id){
+        mapper.deleteByPrimaryKey(id);
     }
 
-
-
-    //按照条件查询
-    public List<UserInfo> getInfoByname(UserInfo userInfo){
-       return userInfoMapper.select(userInfo);
-
+    /**
+     * 更新
+     */
+    public void updInfo(T record){
+        mapper.updateByPrimaryKey(record);
     }
 
-
-    //添加用户信息
-    public void insertInfo(UserInfo userInfo){
-        userInfoMapper.insert(userInfo);
+    /**
+     * 查询所有
+     * @return
+     */
+    public List<T> getListInfo(){
+        return mapper.selectAll();
     }
 
-
-
-    //根据id删除用户信息
-    public void deleteInfo(Integer id){
-        userInfoMapper.deleteByPrimaryKey(id);
+    /**
+     * 按照条件查询
+     * @param record
+     * @return
+     */
+    public List<T> getListByRecord(T record){
+        return mapper.select(record);
     }
 
+    /**
+     * 根据主键进行查询
+     * @param id
+     * @return
+     */
+    public T getInfoById(Integer id){
+        return mapper.selectByPrimaryKey(id);
+    }
 
-
-    //修改用户信息
-    public void updateInfo(UserInfo userInfo){
-        userInfoMapper.updateByPrimaryKey(userInfo);
+    /**
+     * 获取总条数
+     */
+    public Integer getInfoCount(T record){
+        return mapper.selectCount(record);
     }
 
     /**
@@ -69,7 +81,7 @@ public class UserInfoService {
      * @param pageSize
      * @return
      */
-    public Page<UserInfo> getPageList(Object obj, String name, Integer pageNum , Integer pageSize){
+    public Page<T> getPageList(Object obj, String name, Integer pageNum , Integer pageSize){
         String key = obj.toString();
         Map<String, Object> map = new HashMap<String, Object>();
         if (!StringUtils.isNullOrEmpty(name)) {
@@ -81,22 +93,22 @@ public class UserInfoService {
             map.put("pageSize", pageSize);
             key += "_" + pageNum + "_" + pageSize ;
         }
-        Page<UserInfo> page = null;
+        Page<T> page = null;
         if (rs.hasKey(key)) {
 //		if (false) {
-            page = (Page<UserInfo>)rs.get(key);
+            page = (Page<T>)rs.get(key);
             System.out.println("redis获取");
         }
         else {
             try {
                 System.out.println("数据库读取");
-                page = new Page<UserInfo>();
+                page = new Page<T>();
                 //定义方法名
                 String methodName = "getListInfoByPage";
                 //获取对应的方法
                 Method method = obj.getClass().getMethod(methodName, Map.class);
                 //调用方法 ，获取结果集
-                List<UserInfo> list =(List<UserInfo>)method.invoke(obj,map);
+                List<T> list =(List<T>)method.invoke(obj,map);
 
                 methodName = "getListCountByPage";
                 method = obj.getClass().getMethod(methodName, Map.class);
@@ -117,7 +129,4 @@ public class UserInfoService {
         }
         return page;
     }
-
-
-
 }
