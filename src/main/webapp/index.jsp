@@ -18,14 +18,14 @@
 <div class="navbar navbar-default">
     <div class="container">
         <div class="navbar-header">
-            <a href="index.jsp" class="navbar-brand"></a>
+            <a href="${pageContext.request.contextPath}/" class="navbar-brand"></a>
         </div>
         <!-- class="visible-xs-inline-block"：在超小屏幕上显示-->
         <label for="toggle-checkbox" id="toggle-label" class="visible-xs-inline-block">菜单</label>
         <input type="checkbox" class="hidden" id="toggle-checkbox">
         <div class="hidden-xs">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="front/index">首页</a></li>
+                <li class="active"><a href="${pageContext.request.contextPath}/">首页</a></li>
                 <li><a href="front/internal">国内</a></li>
                 <li><a href="front/external">国际</a></li>
                 <li><a href="front/fastRead">速读</a></li>
@@ -34,6 +34,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="front/login">登陆</a></li>
                 <li><a href="front/signup">注册</a></li>
+                <li><a href="${pageContext.request.contextPath}/end/index">后台</a></li>
             </ul>
         </div>
     </div>
@@ -75,7 +76,7 @@
                     <div class="col-xs-7">
                         <a href="front/news" class="title">医保异地结算已实现：只需4步，一分钟看懂怎么办</a>
                         <div class="info">
-                            <span class="avatar"><img src="/static/frontEnd/img/logo.png"></span>
+                            <span class="avatar"><img src="static/frontEnd/img/logo.png"></span>
                             <span>王花花</span>•
                             <span>25k评论</span>•
                             <span>10分钟前</span>
@@ -101,7 +102,7 @@
                         <img src="static/frontEnd/img/005.jpg">
                     </div>
                     <div class="col-xs-7">
-                        <a href="front/news" class="title">医保异地结算已实现：只需4步，一分钟看懂怎么办</a>
+                        <a href="${pageContext.request.contextPath}/front/news" class="title">医保异地结算已实现：只需4步，一分钟看懂怎么办</a>
                         <div class="info">
                             <span class="avatar"><img src="static/frontEnd/img/logo.png"></span>
                             <span>王花花</span>•
