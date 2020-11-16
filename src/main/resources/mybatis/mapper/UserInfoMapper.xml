@@ -10,7 +10,8 @@
        <result column="password" jdbcType="VARCHAR" property="password" />
        <result column="name" jdbcType="VARCHAR" property="name" />
        <result column="email" jdbcType="VARCHAR" property="email" />
-       <result column="information" jdbcType="VARCHAR" property="information" />
+       <result column="information" jdbcType="VARCHAR" property="information"/>
+       <result column="telphone" jdbcType="VARCHAR" property="telphone"/>
    </resultMap>
 <!--    <select id="findPassword" parameterType="com.suha.pojo.UserInfo">-->
 <!--        select * from user_info-->
@@ -30,7 +31,7 @@
     </sql>
 <!--    分页查询-->
     <select id="getListInfoByPage" parameterType="map" resultMap="BaseResultMap">
-        select id , userName , password , name,email,information from user_info
+        select id , userName , password , name,email,information,telphone from user_info
         <include refid="user_info_where"></include>
         <if test="startIndex != null and pageSize != null">
             limit #{startIndex} , #{pageSize}
