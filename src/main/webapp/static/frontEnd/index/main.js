@@ -3,13 +3,51 @@
 $(function () {
 
     var pageNum = start();
+
+    /**
+     * 导航栏
+     */
+    $(".nav.navbar-nav > li").click(function () {
+        $(".nav.navbar-nav > .active").attr("class"," ")
+        $(this).attr("class","active")
+        $(".list-group-item.active").attr("class","list-group-item")
+        $(".list-group.side-bar.hidden-xs > a:first").attr("class","list-group-item active")
+        var pageNum = 1;
+        $(".news-list").empty()
+        var type = $(this).text()
+        if(type === "首页"){
+            news("", pageNum)
+            hotnews("")
+        }else {
+            news(type, pageNum)
+            hotnews(type)
+        }
+
+    })
+
+    /**
+     * 侧边导航栏
+     */
     $(".list-group.side-bar.hidden-xs > a").click(function () {
         var pageNum = 1;
         $(".news-list").empty()
         $(".list-group-item.active").attr("class","list-group-item")
         $(this).attr("class","list-group-item active")
-        var imgList = newsImg(pageNum)
-        news(pageNum, imgList)
+        var type = $(this).text()
+        if (type === "综合"){
+            if($(".nav.navbar-nav > .active").text() === "首页"){
+                news("", pageNum)
+                hotnews("")
+            }else {
+                type = $(".nav.navbar-nav > .active").text()
+                news(type, pageNum)
+                hotnews(type)
+            }
+        }else {
+            news(type, pageNum)
+            hotnews(type)
+        }
+
     })
 
 
@@ -22,8 +60,18 @@ $(function () {
         if(scrollTop + clientHeight >= scrollHeight){   //距离顶部+当前高度 >=文档总高度 即代表滑动到底部
             //滚动条到达底部
             pageNum ++
-            var imgList = newsImg(pageNum)
-            news(pageNum, imgList)
+            var type = $(".list-group-item.active").text()
+            if (type === "综合") {
+                if ($(".nav.navbar-nav > .active").text() === "首页") {
+                    news("", pageNum)
+                }else {
+                    type = $(".nav.navbar-nav > .active").text()
+                    news(type, pageNum)
+                }
+            }else {
+                news(type, pageNum)
+            }
+
         }
 
     });
@@ -40,19 +88,21 @@ $(function () {
 
 
 
-function news(pageNum, imgList){
+function news(type, pageNum){
     $.ajax({
         type:"post",
-        url:"getNewsList",
+        url:"getListForNav",
         dataType:"json",
-        data:{pageNum:pageNum},
+        data:{pageNum:pageNum, type:type},
         success:function (data) {
             console.log(data)
+            var title = data.data[0]
+            var img = data.data[1]
             var html = ""
-            $.each(data.data.rows,function (index,value) {
+            $.each(title,function (index,value) {
                 html += "<div class=\"news-list-item clearfix\">\n" +
                     "                    <div class=\"col-xs-5\">\n" +
-                    "                        <img src=\""+imgList[index].img+"\">\n" +
+                    "                        <img src=\""+img[index].img+"\">\n" +
                     "                    </div>\n" +
                     "                    <div class=\"col-xs-7\">\n" +
                     "                        <a href=\"front/news\" class=\"title\">"+value.title+"</a>\n" +
@@ -86,18 +136,18 @@ function newsImg(pageNum) {
     return imgList
 }
 
-function hotnews() {
+function hotnews(type) {
     var num = Math.floor(Math.random() * 10) + 1
     $.ajax({
         type:"post",
-        url:"getNewsList",
+        url:"getListForNav",
         dataType:"json",
-        data:{pageNum:num},
+        data:{pageNum:num, type:type},
         success:function (data) {
             var list = $(".card-body > .list")
             list.empty()
             var html = ""
-            $.each(data.data.rows,function (index, value) {
+            $.each(data.data[0],function (index, value) {
                 html += "<div class=\"item\">\n" +
                     "                            <a class=\"title\" href=\"#\">"+value.title+"</a>\n" +
                     "                            <div class=\"desc\">"+getDateDiff(value.pubdate)+"</div>\n" +
@@ -174,9 +224,8 @@ function getDateTimeStamp(dateStr) {
 function start() {
     var pageNum = 1
     $(".news-list").empty()
-    var imgList = newsImg(pageNum)
-    news(pageNum, imgList)
-    hotnews()
+    news("", pageNum)
+    hotnews("")
     return pageNum
 }
 

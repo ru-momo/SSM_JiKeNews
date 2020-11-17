@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -25,6 +27,7 @@ public class NavigationController {
 
     /**
      * 获取新闻
+     *
      * @param name
      * @param pageNum
      * @param pageSize
@@ -35,8 +38,6 @@ public class NavigationController {
                                            @RequestParam(defaultValue = "1") Integer pageNum,
                                            @RequestParam(defaultValue = "10") Integer pageSize) {
         Page<NewsInfo> pageList = ns.getPageList(name, pageNum, pageSize);
-
-
         return ResponseCode.ok(pageList);
     }
 
@@ -54,4 +55,24 @@ public class NavigationController {
         Page<NewsImgInfo> listInfoByPage = nis.getListInfoByPage(null, pageNum, pageSize);
         return ResponseCode.ok(listInfoByPage);
     }
+
+    /**
+     * 根据类型获取新闻
+     * @param type
+     * @param pageNum
+     * @param pageSize
+     * @return
+     */
+    @RequestMapping(value = "getListForNav", method = RequestMethod.POST)
+    public Map<String, Object> getListForNav(String type,
+                                             @RequestParam(defaultValue = "1") Integer pageNum,
+                                             @RequestParam(defaultValue = "10") Integer pageSize) {
+        List<NewsInfo> listForNav1 = ns.getListForNav(type, pageNum, pageSize);
+        List<NewsImgInfo> listForNav2 = nis.getListForNav(type, pageNum, pageSize);
+        ArrayList<Object> list = new ArrayList<>();
+        list.add(listForNav1);
+        list.add(listForNav2);
+        return ResponseCode.ok(list);
+    }
+
 }

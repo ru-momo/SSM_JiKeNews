@@ -2,6 +2,7 @@ package com.suha.mapper;
 
 
 import com.suha.pojo.NewsImgInfo;
+import com.suha.pojo.NewsInfo;
 import org.springframework.stereotype.Repository;
 import tk.mybatis.mapper.common.Mapper;
 
@@ -28,5 +29,8 @@ public interface NewsImgInfoMapper extends Mapper<NewsImgInfo> {
      */
     void delList(Integer[] ids);
 
-
+    /**
+     * 根据类别查询
+     */
+    List<NewsImgInfo> getListForNav(Map<String, Object> map);
 }

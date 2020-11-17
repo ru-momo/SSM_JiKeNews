@@ -23,6 +23,15 @@
         </where>
     </sql>
 
+    <sql id="news_type_where">
+        <where>
+            <if test="type !=null and type!=''">
+                and type like '%${type}'
+            </if>
+            and state = 1
+        </where>
+    </sql>
+
     <!--查询所有的数据-->
     <select id="getListInfoByPage" parameterType="map" resultMap="BaseResultMap">
         select id,type,title,introduction,content,pubdate,state from news_info
@@ -39,5 +48,15 @@
         <include refid="news_info_where"></include>
     </select>
 
+
+    <!-- 根据类别查询 -->
+    <select id="getListForNav" parameterType="map" resultMap="BaseResultMap">
+        select id,type,title,introduction,content,pubdate,state from news_info
+        <include refid="news_type_where"></include>
+        order by pubdate desc
+        <if test="startIndex !=null and pageSize !=null">
+            limit #{startIndex},#{pageSize}
+        </if>
+    </select>
 
 </mapper>

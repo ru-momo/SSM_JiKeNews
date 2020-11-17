@@ -154,4 +154,15 @@ public class NewsImgInfoService extends BaseService<NewsImgInfo> {
     }
 
 
+    public List<NewsImgInfo> getListForNav(String type, Integer pageNum, Integer pageSize){
+        Map<String, Object> map = new HashMap<>();
+        if(!StringUtils.isNullOrEmpty(type)){
+            map.put("type", type);
+        }
+        if(pageNum != null && pageSize != null){
+            map.put("startIndex", (pageNum-1)*pageSize);
+            map.put("pageSize", pageSize);
+        }
+        return newsImgInfoMapper.getListForNav(map);
+    }
 }
