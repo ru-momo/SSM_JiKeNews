@@ -7,16 +7,18 @@
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="news_id" jdbcType="INTEGER" property="newsId"/>
         <result column="img" jdbcType="VARCHAR" property="img"/>
+        <result column="pubdate" jdbcType="TIMESTAMP" property="pubdate"/>
     </resultMap>
 
 
     <!--图片的分页查询 -->
     <select id="getListInfoByPage" parameterType="map" resultMap="ResultMap">
-        select id, news_id, img from news_img_info where 1=1
+        select id, news_id, img, pubdate from news_img_info where 1=1
 
             <if test="img != null and img!= ''">
                 and img like '%${name}%'
             </if>
+            order by pubdate desc
             <if test="startIndex != null and pageSize != null">
                 limit #{startIndex}, #{pageSize}
             </if>

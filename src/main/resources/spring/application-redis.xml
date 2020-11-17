@@ -68,7 +68,7 @@
     </bean>
 
     <!--自定义redis工具类,在需要缓存的地方注入此类  -->
-<!--    <bean id="redisService" class="com.suha.service.RedisService">-->
-<!--        <property name="redisTemplate" ref="redisTemplate" />-->
-<!--    </bean>-->
+    <bean id="redisService" class="com.suha.service.RedisService">
+        <property name="redisTemplate" ref="redisTemplate" />
+    </bean>
 </beans>

@@ -32,7 +32,7 @@
 </div>
 <div class="container container-small">
     <h1>登录
-        <small>没有帐号？<a href="${pageContext.request.contextPath}/signup.html">注册</a></small>
+        <small>没有帐号？<a href="${pageContext.request.contextPath}/front/signup">注册</a></small>
     </h1>
     <form>
         <div class="form-group">
