@@ -6,34 +6,38 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html lang="en">
+<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <title>极客开发者</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/frontEnd/css/bootstrap.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/frontEnd/css/main.css">
+    <script type="text/javascript" src="static/frontEnd/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="static/frontEnd/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="static/frontEnd/index/main.js"></script>
 </head>
 <body>
 
 <div class="navbar navbar-default">
     <div class="container">
         <div class="navbar-header">
-            <a href="index.jsp" class="navbar-brand"></a>
+            <a href="${pageContext.request.contextPath}/" class="navbar-brand"></a>
         </div>
         <!-- class="visible-xs-inline-block"：在超小屏幕上显示-->
         <label for="toggle-checkbox" id="toggle-label" class="visible-xs-inline-block">菜单</label>
         <input type="checkbox" class="hidden" id="toggle-checkbox">
         <div class="hidden-xs">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="front/index">首页</a></li>
-                <li><a href="front/internal">国内</a></li>
-                <li><a href="front/external">国际</a></li>
-                <li><a href="front/fastRead">速读</a></li>
-                <li><a href="front/society">社会</a></li>
+                <li class="active"><a href="${pageContext.request.contextPath}/">首页</a></li>
+                <li><a href="front/international">国际</a></li>
+                <li><a href="front/game">游戏</a></li>
+                <li><a href="front/automobile">汽车</a></li>
+                <li><a href="front/science">科技</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="front/login">登陆</a></li>
                 <li><a href="front/signup">注册</a></li>
+                <li><a href="${pageContext.request.contextPath}/end/index">后台</a></li>
             </ul>
         </div>
     </div>
@@ -43,13 +47,9 @@
         <div class="col-sm-2">
             <div class="list-group side-bar hidden-xs">
                 <a href="#" class="list-group-item active">综合</a>
-                <a href="#" class="list-group-item">综合</a>
-                <a href="#" class="list-group-item">综合</a>
-                <a href="#" class="list-group-item">综合</a>
-                <a href="#" class="list-group-item">综合</a>
-                <a href="#" class="list-group-item">综合</a>
-                <a href="#" class="list-group-item">综合</a>
-                <a href="#" class="list-group-item">综合</a>
+                <a href="#" class="list-group-item">电影</a>
+                <a href="#" class="list-group-item">音乐</a>
+                <a href="#" class="list-group-item">明星</a>
             </div>
         </div>
         <div class="col-sm-7">
@@ -59,7 +59,7 @@
                         <img src="static/frontEnd/img/002.jpg">
                     </div>
                     <div class="col-xs-7">
-                        <a href="front/news.jsp" class="title">医保异地结算已实现：只需4步，一分钟看懂怎么办</a>
+                        <a href="front/news" class="title">医保异地结算已实现：只需4步，一分钟看懂怎么办</a>
                         <div class="info">
                             <span class="avatar"><img src="static/frontEnd/img/logo.png"></span>
                             <span>王花花</span>•
@@ -73,9 +73,9 @@
                         <img src="static/frontEnd/img/003.jpg">
                     </div>
                     <div class="col-xs-7">
-                        <a href="/front/news.jsp" class="title">医保异地结算已实现：只需4步，一分钟看懂怎么办</a>
+                        <a href="front/news" class="title">医保异地结算已实现：只需4步，一分钟看懂怎么办</a>
                         <div class="info">
-                            <span class="avatar"><img src="/static/frontEnd/img/logo.png"></span>
+                            <span class="avatar"><img src="static/frontEnd/img/logo.png"></span>
                             <span>王花花</span>•
                             <span>25k评论</span>•
                             <span>10分钟前</span>
@@ -87,7 +87,7 @@
                         <img src="static/frontEnd/img/004.jpg">
                     </div>
                     <div class="col-xs-7">
-                        <a href="/front/news.jsp" class="title">医保异地结算已实现：只需4步，一分钟看懂怎么办</a>
+                        <a href="front/news" class="title">医保异地结算已实现：只需4步，一分钟看懂怎么办</a>
                         <div class="info">
                             <span class="avatar"><img src="static/frontEnd/img/logo.png"></span>
                             <span>王花花</span>•
@@ -101,7 +101,7 @@
                         <img src="static/frontEnd/img/005.jpg">
                     </div>
                     <div class="col-xs-7">
-                        <a href="front/news.jsp" class="title">医保异地结算已实现：只需4步，一分钟看懂怎么办</a>
+                        <a href="${pageContext.request.contextPath}/front/news" class="title">医保异地结算已实现：只需4步，一分钟看懂怎么办</a>
                         <div class="info">
                             <span class="avatar"><img src="static/frontEnd/img/logo.png"></span>
                             <span>王花花</span>•
@@ -114,11 +114,11 @@
         </div>
         <div class="col-sm-3">
             <div class="search-bar">
-                <input type="search" class="form-control" placeholder="搜一下">
+                <input type="search" class="form-control" placeholder="搜一下" id="sousou">
             </div>
             <div class="side-bar-card flag clearfix">
                 <div class="col-xs-5">
-                    <img src="/static/frontEnd/img/1-1.png">
+                    <img src="static/frontEnd/img/1-1.png">
                 </div>
                 <div class="col-xs-7">
                     <div class="text-lg">有害信息举报专区</div>

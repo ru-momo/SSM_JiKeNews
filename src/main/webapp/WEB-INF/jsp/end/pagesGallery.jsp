@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
-  Date: 2020/11/12
-  Time: 20:01
+  Date: 2020/11/13
+  Time: 9:21
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-<h3>协议</h3>
+<h3>图库列表</h3>
 </body>
 </html>

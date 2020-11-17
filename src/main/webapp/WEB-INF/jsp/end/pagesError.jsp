@@ -15,9 +15,9 @@
     <meta name="keywords" content="LightYear,光年,后台模板,后台管理系统,光年HTML模板">
     <meta name="description" content="LightYear是一个基于Bootstrap v3.3.7的后台管理系统的HTML模板。">
     <meta name="author" content="yinqi">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/materialdesignicons.min.css" rel="stylesheet">
-    <link href="css/style.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/backEnd/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/backEnd/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/backEnd/css/style.min.css" rel="stylesheet">
     <style>
         body{
             background-color: #fff;
@@ -49,12 +49,12 @@
         <div class="error-body text-center">
             <h1>404</h1>
             <h4>很抱歉，但是那个页面看起来已经不存在了。</h4>
-            <a href="index.html" class="btn btn-primary ">返回首页</a>
+            <a href="${pageContext.request.contextPath}/end/index" class="btn btn-primary ">返回首页</a>
         </div>
     </div>
 </section>
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/bootstrap.min.js"></script>
 <script type="text/javascript">;</script>
 </body>
 </html>

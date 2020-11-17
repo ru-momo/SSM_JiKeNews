@@ -2,23 +2,22 @@
   Created by IntelliJ IDEA.
   User: Administrator
   Date: 2020/11/12
-  Time: 9:14
+  Time: 20:18
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="zh">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>新增文档 - 光年(Light Year Admin)后台管理系统模板</title>
-    <link rel="icon" href="${pageContext.request.contextPath}/static/bankEnd/favicon.ico" type="image/ico">
+    <title>个人信息 - 光年(Light Year Admin)后台管理系统模板</title>
+    <link rel="icon" href="${pageContext.request.contextPath}/static/backEnd/favicon.ico" type="image/ico">
     <meta name="keywords" content="LightYear,光年,后台模板,后台管理系统,光年HTML模板">
     <meta name="description" content="LightYear是一个基于Bootstrap v3.3.7的后台管理系统的HTML模板。">
     <meta name="author" content="yinqi">
     <link href="${pageContext.request.contextPath}/static/backEnd/css/bootstrap.min.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/static/backEnd/css/materialdesignicons.min.css" rel="stylesheet">
-    <!--标签插件-->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/backEnd/js/jquery-tags-input/jquery.tagsinput.min.css">
     <link href="${pageContext.request.contextPath}/static/backEnd/css/style.min.css" rel="stylesheet">
 </head>
 
@@ -30,24 +29,24 @@
 
             <!-- logo -->
             <div id="logo" class="sidebar-header">
-                <a href="${pageContext.request.contextPath}/end/index"><img src="${pageContext.request.contextPath}/static/bankEnd/images/logo-sidebar.png" title="LightYear" alt="LightYear" /></a>
+                <a href="index.html"><img src="${pageContext.request.contextPath}/static/backEnd/images/logo-sidebar.png" title="LightYear" alt="LightYear" /></a>
             </div>
             <div class="lyear-layout-sidebar-scroll">
 
                 <nav class="sidebar-main">
                     <ul class="nav nav-drawer">
-                        <li class="nav-item"> <a href="${pageContext.request.contextPath}/end/index"><i class="mdi mdi-home"></i> 后台首页</a> </li>
-                        <li class="nav-item nav-item-has-subnav active open">
+                        <li class="nav-item active"> <a href="${pageContext.request.contextPath}/end/index"><i class="mdi mdi-home"></i> 后台首页</a> </li>
+                        <li class="nav-item nav-item-has-subnav">
                             <a href="javascript:void(0)"><i class="mdi mdi-file-outline"></i> 示例页面</a>
                             <ul class="nav nav-subnav">
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesDoc.jsp">文档列表</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesGallery.jsp">图库列表</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesConfig.jsp">网站配置</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesRabc.jsp">设置权限</a> </li>
-                                <li class="active"> <a href="${pageContext.request.contextPath}/end/pagesAddDoc.jsp">新增文档</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesGuide.jsp">表单向导</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesLogin.jsp">登录页面</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesError.jsp">错误页面</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesDoc">文档列表</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesGallery">图库列表</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesConfig">网站配置</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesRabc">设置权限</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesAddDoc">新增文档</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesGuide">表单向导</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesLogin">登录页面</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesError">错误页面</a> </li>
                             </ul>
                         </li>
                     </ul>
@@ -70,17 +69,17 @@
                             <span class="lyear-toggler-bar"></span>
                             <span class="lyear-toggler-bar"></span>
                         </div>
-                        <span class="navbar-page-title"> 示例页面 - 新增文档 </span>
+                        <span class="navbar-page-title"> 示例页面 - 个人信息 </span>
                     </div>
 
                     <ul class="topbar-right">
                         <li class="dropdown dropdown-profile">
                             <a href="javascript:void(0)" data-toggle="dropdown">
-                                <img class="img-avatar img-avatar-48 m-r-10" src="${pageContext.request.contextPath}/images/users/avatar.jpg" alt="笔下光年" />
+                                <img class="img-avatar img-avatar-48 m-r-10" src="${pageContext.request.contextPath}/static/backEnd/images/users/avatar.jpg" alt="笔下光年" />
                                 <span>笔下光年 <span class="caret"></span></span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-right">
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesProfile"><i class="mdi mdi-account"></i> 个人信息</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesProfileLogin"><i class="mdi mdi-account"></i> 个人信息</a> </li>
                                 <li> <a href="${pageContext.request.contextPath}/end/pagesEditPwd"><i class="mdi mdi-lock-outline"></i> 修改密码</a> </li>
                                 <li> <a href="javascript:void(0)"><i class="mdi mdi-delete"></i> 清空缓存</a></li>
                                 <li class="divider"></li>
@@ -240,104 +239,37 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <form action="#!" method="post" class="row">
-                                    <div class="form-group col-md-12">
-                                        <label for="type">栏目</label>
-                                        <div class="form-controls">
-                                            <select name="type" class="form-control" id="type">
-                                                <option value="1">小说</option>
-                                                <option value="2">古籍</option>
-                                                <option value="3">专辑</option>
-                                                <option value="4">自传</option>
-                                            </select>
-                                        </div>
+                                <div class="edit-avatar">
+                                    <img src="${pageContext.request.contextPath}/static/backEnd/images/users/avatar.jpg" alt="..." class="img-avatar">
+                                    <div class="avatar-divider"></div>
+                                    <div class="edit-avatar-content">
+                                        <button class="btn btn-default">修改头像</button>
+                                        <p class="m-0">选择一张你喜欢的图片，裁剪后会自动生成264x264大小，上传图片大小不能超过2M。</p>
                                     </div>
-                                    <div class="form-group col-md-12">
-                                        <label for="title">标题</label>
-                                        <input type="text" class="form-control" id="title" name="title" value="" placeholder="请输入标题" />
+                                </div>
+                                <hr>
+                                <form method="post" action="#!" class="site-form">
+                                    <div class="form-group">
+                                        <label for="username">用户名</label>
+                                        <input type="text" class="form-control" name="username" id="username" value="lightyear"
+                                               disabled="disabled" />
                                     </div>
-                                    <div class="form-group col-md-12">
-                                        <label for="seo_keywords">关键词</label>
-                                        <input type="text" class="form-control" id="seo_keywords" name="seo_keywords" value=""
-                                               placeholder="关键词" />
+                                    <div class="form-group">
+                                        <label for="nickname">昵称</label>
+                                        <input type="text" class="form-control" name="nickname" id="nickname" placeholder="输入您的昵称"
+                                               value="笔下光年">
                                     </div>
-                                    <div class="form-group col-md-12">
-                                        <label for="seo_description">描述</label>
-                                        <textarea class="form-control" id="seo_description" name="seo_description" rows="5" value=""
-                                                  placeholder="描述"></textarea>
+                                    <div class="form-group">
+                                        <label for="email">邮箱</label>
+                                        <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp"
+                                               placeholder="请输入正确的邮箱地址" value="3331653644@qq.com">
+                                        <small id="emailHelp" class="form-text text-muted">请保证您填写的邮箱地址是正确的。</small>
                                     </div>
-                                    <div class="form-group col-md-12">
-                                        <label>多图上传</label>
-                                        <div class="form-controls">
-
-                                            <ul class="list-inline clearfix lyear-uploads-pic" id="imgAll">
-                                                <!-- <li class="col-xs-4 col-sm-3 col-md-2">
-                                                  <figure>
-                                                    <img src="images/gallery/15.jpg" alt="图片一">
-                                                    <figcaption>
-                                                      <a class="btn btn-round btn-square btn-primary" href="#!"><i
-                                                          class="mdi mdi-eye"></i></a>
-                                                      <a class="btn btn-round btn-square btn-danger" href="#!"><i
-                                                          class="mdi mdi-delete"></i></a>
-                                                    </figcaption>
-                                                  </figure>
-                                                </li>
-                                                <li class="col-xs-4 col-sm-3 col-md-2">
-                                                  <figure>
-                                                    <img src="images/gallery/16.jpg" alt="图片二">
-                                                    <figcaption>
-                                                      <a class="btn btn-round btn-square btn-primary" href="#!"><i
-                                                          class="mdi mdi-eye"></i></a>
-                                                      <a class="btn btn-round btn-square btn-danger" href="#!"><i
-                                                          class="mdi mdi-delete"></i></a>
-                                                    </figcaption>
-                                                  </figure>
-                                                </li>
-                                                <li class="col-xs-4 col-sm-3 col-md-2">
-                                                  <figure>
-                                                    <img src="images/gallery/17.jpg" alt="图片三">
-                                                    <figcaption>
-                                                      <a class="btn btn-round btn-square btn-primary" href="#!"><i
-                                                          class="mdi mdi-eye"></i></a>
-                                                      <a class="btn btn-round btn-square btn-danger" href="#!"><i
-                                                          class="mdi mdi-delete"></i></a>
-                                                    </figcaption>
-                                                  </figure>
-                                                </li> -->
-                                                <li class="col-xs-4 col-sm-3 col-md-2" id="nodelast">
-                                                    <a class="pic-add" id="add-pic-btn" href="#!" title="点击上传" onclick="pull()"></a>
-                                                </li>
-                                            </ul>
-                                        </div>
+                                    <div class="form-group">
+                                        <label for="remark">简介</label>
+                                        <textarea class="form-control" name="remark" id="remark" rows="3"></textarea>
                                     </div>
-                                    <div class="form-group col-md-12">
-                                        <label for="content">内容</label>
-                                        <p>HTML编辑器这里就不做演示了</p>
-                                    </div>
-                                    <div class="form-group col-md-12">
-                                        <label for="tags">标签</label>
-                                        <input class="js-tags-input form-control" type="text" id="tags" name="tags" value="" />
-                                    </div>
-                                    <div class="form-group col-md-12">
-                                        <label for="sort">排序</label>
-                                        <input type="text" class="form-control" id="sort" name="sort" value="0" />
-                                    </div>
-                                    <div class="form-group col-md-12">
-                                        <label for="status">状态</label>
-                                        <div class="clearfix">
-                                            <label class="lyear-radio radio-inline radio-primary">
-                                                <input type="radio" name="status" value="0"><span>禁用</span>
-                                            </label>
-                                            <label class="lyear-radio radio-inline radio-primary">
-                                                <input type="radio" name="status" value="1" checked><span>启用</span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-md-12">
-                                        <button type="submit" class="btn btn-primary ajax-post" target-form="add-form">确 定</button>
-                                        <button type="button" class="btn btn-default"
-                                                onclick="javascript:history.back(-1);return false;">返 回</button>
-                                    </div>
+                                    <button type="submit" class="btn btn-primary">保存</button>
                                 </form>
 
                             </div>
@@ -353,39 +285,10 @@
     </div>
 </div>
 
-<script type="text/javascript" src="static/bankEnd/js/jquery.min.js"></script>
-<script type="text/javascript" src="static/bankEnd/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="static/bankEnd/js/perfect-scrollbar.min.js"></script>
-<!--标签插件-->
-<script src="static/bankEnd/js/jquery-tags-input/jquery.tagsinput.min.js"></script>
-<script type="text/javascript" src="static/bankEnd/js/main.min.js"></script>
-
-<script type="text/javascript">
-    function pull() {
-        var html = "<li class='col-xs-4 col-sm-3 col-md-2' id='node2' style='display: none;'>" +
-            "<figure>" +
-            "<img src='images/gallery/17.jpg' alt='图片二'>" +
-            "<figcaption>" +
-            "<a class='btn btn-round btn-square btn-primary' href='#!''><i class='mdi mdi-eye'></i></a>" +
-            "<a class='btn btn-round btn-square btn-danger' href='#!''><i class='mdi mdi-delete'></i></a>" +
-            "<input type='file' style='display: none;' id='pullfile2'> " +
-            "</figcaption>" +
-            "</figure></li>";
-
-        $("#nodelast").before(html);
-
-        document.getElementById("pullfile2").click();
-
-        document.getElementById("pullfile2").addEventListener("change", function () {
-            $("#node2").attr("style", "display: inline;");
-        });
-
-    }
-
-
-
-
-</script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/perfect-scrollbar.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/main.min.js"></script>
 </body>
 
 </html>

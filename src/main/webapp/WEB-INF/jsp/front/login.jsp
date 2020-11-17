@@ -11,7 +11,7 @@
 <div class="navbar navbar-default">
     <div class="container">
         <div class="navbar-header">
-            <a href="front/index" class="navbar-brand"></a>
+            <a href="${pageContext.request.contextPath}" class="navbar-brand"></a>
         </div>
         <label for="toggle-checkbox" id="toggle-label" class="visible-xs-inline-block">菜单</label>
         <input type="checkbox" class="hidden" id="toggle-checkbox">
@@ -32,7 +32,7 @@
 </div>
 <div class="container container-small">
     <h1>登录
-        <small>没有帐号？<a href="${pageContext.request.contextPath}/signup.html">注册</a></small>
+        <small>没有帐号？<a href="${pageContext.request.contextPath}/front/signup">注册</a></small>
     </h1>
     <form>
         <div class="form-group">

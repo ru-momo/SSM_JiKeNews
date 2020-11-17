@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.suha.mapper.UserInfoMapper">
+   <resultMap id="BaseResultMap" type="com.suha.pojo.UserInfo">
+       <id column="id" jdbcType="INTEGER" property="id" />
+       <result column="user_name" jdbcType="VARCHAR" property="userName" />
+       <result column="password" jdbcType="VARCHAR" property="password" />
+       <result column="name" jdbcType="VARCHAR" property="name" />
+       <result column="email" jdbcType="VARCHAR" property="email" />
+       <result column="information" jdbcType="VARCHAR" property="information"/>
+       <result column="telphone" jdbcType="VARCHAR" property="telphone"/>
+   </resultMap>
+<!--    <select id="findPassword" parameterType="com.suha.pojo.UserInfo">-->
+<!--        select * from user_info-->
+<!--        where password = #{password}-->
+
+<!--        <if test="name!=null and name!=''">-->
+<!--            and userName = #{userName}-->
+<!--        </if>-->
+<!--    </select>-->
+<!--    lowers 是大写全部换成小写-->
+    <sql id="user_info_where">
+        <where>
+            <if test="userName != null and userName != ''">
+                and lower(nameName) like lower(concat('%','${nameName}','%'))
+            </if>
+        </where>
+    </sql>
+<!--    分页查询-->
+    <select id="getListInfoByPage" parameterType="map" resultMap="BaseResultMap">
+        select id , userName , password , name,email,information,telphone from user_info
+        <include refid="user_info_where"></include>
+        <if test="startIndex != null and pageSize != null">
+            limit #{startIndex} , #{pageSize}
+        </if>
+    </select>
+
+<!--    按照条件查询总数据量-->
+    <select id="getListCountByPage" parameterType="map" resultType="int">
+        select count(id) from user_info
+        <include refid="user_info_where"></include>
+    </select>
+
+</mapper>
