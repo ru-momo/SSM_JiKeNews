@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class NewsInfoService extends BaseService<NewsInfo>{
     @Autowired
-    private NewsinfoMapper nm;
+    private NewsInfoMapper nm;
     //重写父类的分页方法
    public Page<NewsInfo> getPageList(String name,Integer pageNum, Integer pageSize){
        return super.getPageList(nm,name,pageNum,pageSize);
