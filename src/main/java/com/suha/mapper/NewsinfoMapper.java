@@ -6,7 +6,7 @@ import tk.mybatis.mapper.common.Mapper;
 import java.util.List;
 import java.util.Map;
 
-public interface NewsinfoMapper extends Mapper<NewsInfo> {
+public interface NewsInfoMapper extends Mapper<NewsInfo> {
 
     List<NewsInfo> getListInfoByPage(Map<String,Object> map);
 
