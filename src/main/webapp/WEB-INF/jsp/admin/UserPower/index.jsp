@@ -242,10 +242,17 @@
                             </div>
                             <div class="card-body">
 
-                                <form action="#!" method="post">
+                                <form action="getName" method="post">
                                     <div class="form-group">
-                                        <label for="example-text-input">角色名称</label>
-                                        <input class="form-control" type="text" name="role-input" placeholder="角色名称">
+                                        <label for="example-text-input">权限编号</label>
+<%--                                        <input class="form-control" type="text" name="role-input" placeholder="请输入权限编号" >--%>
+                                        <select class="form-control" name="role-input">
+
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                        </select>
                                     </div>
                                     <div class="table-responsive">
                                         <table class="table table-striped">
@@ -264,68 +271,43 @@
                                             <tr>
                                                 <td>
                                                     <label class="lyear-checkbox checkbox-primary">
-                                                        <input name="rules[]" type="checkbox" class="checkbox-parent" dataid="id-2" value="2">
-                                                        <span> 用户管理</span>
+                                                        <input name="rules[]" type="checkbox" class="checkbox-parent" dataid="id-2" value="2" >
+                                                        <span> 权限管理</span>
                                                     </label>
                                                 </td>
                                             </tr>
 
-                                            <tr>
-                                                <td class="p-l-20">
-                                                    <label class="lyear-checkbox checkbox-primary">
-                                                        <input name="rules[]" type="checkbox" class="checkbox-parent checkbox-child"
-                                                               dataid="id-2-12" value="12">
-                                                        <span> 用户管理</span>
-                                                    </label>
-                                                </td>
-                                            </tr>
+
                                             <tr>
                                                 <td class="p-l-40">
                                                     <label class="lyear-checkbox checkbox-primary checkbox-inline checkbox-inline">
                                                         <input name="rules[]" type="checkbox" class="checkbox-child" dataid="id-2-12-62"
-                                                               value="62">
-                                                        <span> 添加用户</span>
+                                                               value="62" >
+                                                        <span> 查看用户权限</span>
                                                     </label>
                                                     <label class="lyear-checkbox checkbox-primary checkbox-inline checkbox-inline">
                                                         <input name="rules[]" type="checkbox" class="checkbox-child" dataid="id-2-12-63"
-                                                               value="63">
-                                                        <span> 编辑用户</span>
+                                                               value="63" >
+                                                        <span> 查看新闻权限</span>
                                                     </label>
                                                     <label class="lyear-checkbox checkbox-primary checkbox-inline checkbox-inline">
                                                         <input name="rules[]" type="checkbox" class="checkbox-child" dataid="id-2-12-64"
-                                                               value="64">
-                                                        <span> 删除用户</span>
+                                                               value="64" >
+                                                        <span> 管理用户权限</span>
                                                     </label>
                                                     <label class="lyear-checkbox checkbox-primary checkbox-inline checkbox-inline">
                                                         <input name="rules[]" type="checkbox" class="checkbox-child" dataid="id-2-12-65"
-                                                               value="65">
-                                                        <span> 启用/禁用用户</span>
-                                                    </label>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <label class="lyear-checkbox checkbox-primary">
-                                                        <input name="rules[]" type="checkbox" class="checkbox-parent" dataid="id-4" value="4">
-                                                        <span> 扩展管理</span>
+                                                               value="65" >
+                                                        <span> 管理新闻权限</span>
                                                     </label>
                                                 </td>
                                             </tr>
 
 
-
-                                            <tr>
-                                                <td class="p-l-40">
-                                                    <label class="lyear-checkbox checkbox-primary">
-                                                        <input name="rules[]" type="checkbox" class="checkbox-child" dataid="id-4-66-67"
-                                                               value="67">
-                                                        <span> 上传图片</span>
-                                                    </label>
-                                                </td>
-                                            </tr>
                                             </tbody>
                                         </table>
                                     </div>
+                                    <input type="submit" value="提交">
                                 </form>
 
                             </div>
@@ -341,12 +323,12 @@
     </div>
 </div>
 
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/perfect-scrollbar.min.js"></script>
-<script type="text/javascript" src="js/main.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/perfect-scrollbar.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/main.min.js"></script>
 
-<script type="text/javascript" src="js/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/chosen.jquery.min.js"></script>
 <script type="text/javascript">
     $(function () {
         //动态选择框，上下级选中状态变化
@@ -386,3 +368,4 @@
 </body>
 
 </html>
+
