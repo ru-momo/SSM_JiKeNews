@@ -3,6 +3,7 @@ package com.suha.service;
 import com.mysql.cj.util.StringUtils;
 import com.suha.mapper.NewsImgInfoMapper;
 import com.suha.pojo.NewsImgInfo;
+import com.suha.pojo.NewsInfo;
 import com.suha.util.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -14,22 +15,17 @@ import java.util.Map;
 
 
 @Service
-public class NewsImgInfoService extends BaseService<NewsImgInfo> {
+public class NewsImgInfoService extends BaseService<NewsImgInfo>{
 
     //自动注入
     @Autowired
     private NewsImgInfoMapper newsImgInfoMapper;
 
-    @Autowired
-    private RedisService redisService;
 
-    /**
-     * 添加图片信息
-     * @param newsImgInfo
-     */
-    public void addNewsImgInfo(NewsImgInfo newsImgInfo){
-        newsImgInfoMapper.insert(newsImgInfo);
+    public Page<NewsImgInfo> getPageList(String name, Integer pageNum, Integer pageSize){
+        return super.getPageList(newsImgInfoMapper,name,pageNum,pageSize);
     }
+
 
     /**
      * 批量删除
@@ -40,74 +36,81 @@ public class NewsImgInfoService extends BaseService<NewsImgInfo> {
     }
 
 
+  /*  *//**
+     * 添加图片信息
+     * @param newsImgInfo
+     *//*
+    public void addNewsImgInfo(NewsImgInfo newsImgInfo){
+        newsImgInfoMapper.insert(newsImgInfo);
+    }
 
 
-    /**
+
+    *//**
      * 删除图片信息
      * @param id
-     */
+     *//*
     public void delNewsImgInfo(Integer id){
         newsImgInfoMapper.deleteByPrimaryKey(id);
     }
 
 
-    /**
+    *//**
      * 更新图片信息
      * @param newsImgInfo
-     */
+     *//*
     public void updnewsImgInfo(NewsImgInfo newsImgInfo){
         newsImgInfoMapper.updateByPrimaryKey(newsImgInfo);
     }
 
 
-    /**
+    *//**
      * 查询所有图片
      * @return
-     */
+     *//*
     public List<NewsImgInfo> getListImgInfo(){
         return newsImgInfoMapper.selectAll();
     }
 
 
-
-    /**
+    *//**
      * 按照条件查询
      * @param newsImgInfo
      * @return
-     */
+     *//*
     public List<NewsImgInfo> getListByImg(NewsImgInfo newsImgInfo){
         return newsImgInfoMapper.select(newsImgInfo);
     }
 
 
-    /**
+    *//**
      * 根据主键查询
       * @param id
      * @return
-     */
+     *//*
     public NewsImgInfo getInfoById(Integer id){
         return newsImgInfoMapper.selectByPrimaryKey(id);
 
     }
 
 
-    /**
+    *//**
      * 查询数据总条数
      * @param newsImgInfo
      * @return
-     */
+     *//*
     public Integer getImgInfoCount(NewsImgInfo newsImgInfo){
         return newsImgInfoMapper.selectCount(newsImgInfo);
     }
 
 
-    /**
+    *//**
      * 分页查询
      * @param img
      * @param pageNum
      * @param pageSize
      * @return
-     */
+     *//*
     public Page<NewsImgInfo> getListInfoByPage(String img, Integer pageNum, Integer pageSize){
         Page<NewsImgInfo> page = null;
         String key = "news_img_info";
@@ -152,6 +155,10 @@ public class NewsImgInfoService extends BaseService<NewsImgInfo> {
         }
             return page;
     }
+*/
+
+
+
 
 
     public List<NewsImgInfo> getListForNav(String type, Integer pageNum, Integer pageSize){

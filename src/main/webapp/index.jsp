@@ -16,6 +16,7 @@
     <script type="text/javascript" src="static/frontEnd/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="static/frontEnd/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="static/frontEnd/index/main.js"></script>
+    <script type="text/javascript" src="static/frontEnd/index/top.js"></script>
 </head>
 <body>
 

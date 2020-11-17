@@ -3,7 +3,7 @@ package com.suha.controller.front.web;
 import com.suha.pojo.NewsImgInfo;
 import com.suha.pojo.NewsInfo;
 import com.suha.service.NewsImgInfoService;
-import com.suha.service.NewsinfoService;
+import com.suha.service.NewsInfoService;
 import com.suha.util.Page;
 import com.suha.util.ResponseCode;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,7 @@ import java.util.Map;
 public class NavigationController {
 
     @Autowired
-    private NewsinfoService ns;
+    private NewsInfoService ns;
 
     @Autowired
     private NewsImgInfoService nis;
@@ -52,7 +52,7 @@ public class NavigationController {
     public Map<String, Object> getNewsImgList(String name,
                                               @RequestParam(defaultValue = "1") Integer pageNum,
                                               @RequestParam(defaultValue = "10") Integer pageSize) {
-        Page<NewsImgInfo> listInfoByPage = nis.getListInfoByPage(null, pageNum, pageSize);
+        Page<NewsImgInfo> listInfoByPage = nis.getPageList(null, pageNum, pageSize);
         return ResponseCode.ok(listInfoByPage);
     }
 

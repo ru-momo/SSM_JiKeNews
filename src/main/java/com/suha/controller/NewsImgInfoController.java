@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -31,19 +32,19 @@ public class NewsImgInfoController {
     /**
      * 分页查询
      * @param model
-     * @param img
+     * @param name
      * @param pageNum
      * @param pageSize
      * @return
      */
 
     @RequestMapping(value = "pagesImg",method = RequestMethod.GET)
-    public String getInfoByPage(Model model,String img,
+    public String getInfoByPage(Model model,String name,
                                 @RequestParam(defaultValue = "1")Integer pageNum,
                                 @RequestParam(defaultValue = "10")Integer pageSize) {
-        Page<NewsImgInfo> page = newsImgInfoService.getListInfoByPage(img, pageNum, pageSize);
+        Page<NewsImgInfo> page = newsImgInfoService.getPageList(name, pageNum, pageSize);
         model.addAttribute("page", page);
-        model.addAttribute("img",img);
+        model.addAttribute("name",name);
         return "end/pagesImg";
     }
 
@@ -72,7 +73,7 @@ public class NewsImgInfoController {
             return ResponseCode.error(id + "不存在");
         }
         //执行删除操作
-        newsImgInfoService.delNewsImgInfo(id);
+        newsImgInfoService.delInfo(id);
         return ResponseCode.ok();
     }
 
@@ -80,16 +81,18 @@ public class NewsImgInfoController {
     /**
      * 添加图片信息
      * @param files
-     * @param newsImgInfo
      * @return
      */
     @ResponseBody
     @RequestMapping(value = "addInfo", method = RequestMethod.POST)
     public Map<String, Object> getImgInfo(MultipartFile files,
-                                          NewsImgInfo newsImgInfo){
+                                          @RequestParam(defaultValue = "newsId") Integer newsId){
 
-        System.out.println(newsImgInfo.getNewsId());
-        if(newsImgInfo.getNewsId() == null){
+        System.out.println(newsId);
+        NewsImgInfo record = new NewsImgInfo();
+        record.setNewsId(newsId);
+        List<NewsImgInfo> newsImgInfo = newsImgInfoService.getListByRecord(record);
+        if(newsImgInfo.get(0).getNewsId() == null){
             return ResponseCode.paramIsNull();
         }
         //上传文件
@@ -98,10 +101,10 @@ public class NewsImgInfoController {
             return ResponseCode.error("文件不存在");
         }
 
-        newsImgInfo.setImg(file);
+        newsImgInfo.get(0).setImg(file);
 
         //添加图片
-        newsImgInfoService.addNewsImgInfo(newsImgInfo);
+        newsImgInfoService.addInfo(newsImgInfo.get(0));
         return ResponseCode.ok(newsImgInfo);
     }
 

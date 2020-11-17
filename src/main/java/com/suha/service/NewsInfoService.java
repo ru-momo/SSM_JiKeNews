@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class NewsinfoService extends BaseService<NewsInfo>{
+public class NewsInfoService extends BaseService<NewsInfo>{
     @Autowired
     private NewsInfoMapper nm;
     //重写父类的分页方法

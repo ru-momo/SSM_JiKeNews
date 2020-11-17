@@ -26,7 +26,7 @@
         select id, news_id, img, pubdate from news_img_info where 1=1
 
             <if test="img != null and img!= ''">
-                and img like '%${img}%'
+                and img like '%${name}%'
             </if>
             order by pubdate desc
             <if test="startIndex != null and pageSize != null">
@@ -40,7 +40,7 @@
         select count(id) from news_img_info where 1=1
 
             <if test="img != null and img != ''">
-                and  and img like '%${img}%'
+                and  and img like '%${name}%'
             </if>
 
     </select>

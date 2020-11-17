@@ -84,6 +84,9 @@ $(function () {
         }
     });
 
+    //回到顶部TOP按钮
+    new Top({dImg:"static/frontEnd/img/up-d.png",th:300, hImg:"static/frontEnd/img/up-h.png"})
+
 })
 
 
@@ -137,7 +140,7 @@ function newsImg(pageNum) {
 }
 
 function hotnews(type) {
-    var num = Math.floor(Math.random() * 10) + 1
+    var num = Math.floor(Math.random() * 3) + 1
     $.ajax({
         type:"post",
         url:"getListForNav",
