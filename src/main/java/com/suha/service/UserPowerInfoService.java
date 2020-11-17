@@ -39,6 +39,14 @@ public class UserPowerInfoService {
         return info;
     }
 
+    //
+    public List<UserPowerInfo> findByInfo(UserPowerInfo info){
+        UserPowerInfo record = new UserPowerInfo();
+        return upim.select(record);
+
+
+    }
+
     //查询所有
     public List<UserPowerInfo> queryUser(){
         List<UserPowerInfo> list = upim.selectAll();

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 import static java.awt.SystemColor.info;
@@ -66,6 +67,21 @@ public class UserPowerInfoController {
         if (info == null) {
             return ResponseCode.idIsNotExists(id).get("data").toString();
         }
+        if(info.getPower() == 1){
+            info.setPower(2);
+        }
+        if (info.getCheckUserPower()==1){
+            info.setCheckUserPower(62);
+        }
+        if (info.getCheckNewsPower()==1){
+            info.setCheckNewsPower(63);
+        }
+        if (info.getAdminUserPower()==1){
+            info.setAdminUserPower(64);
+        }if (info.getAdminNewsPower()==1){
+            info.setAdminNewsPower(65);
+        }
+
         model.addAttribute("info", info);
         return "admin/UserPower/edit";
     }
@@ -119,6 +135,17 @@ public class UserPowerInfoController {
         us.updInfo(info);
         System.out.println("成功" + info);
         return "a";
+    }
+
+    @ResponseBody
+    @RequestMapping("list")
+    public Map<String,Object> getList(@RequestParam(value = "role-input",defaultValue = "1") Integer parentId){
+        UserPowerInfo info = new UserPowerInfo();
+        info.setId(parentId);
+        List<UserPowerInfo> list = us.findByInfo(info);
+        System.out.println(list);
+        return ResponseCode.ok(list);
+
     }
 
 

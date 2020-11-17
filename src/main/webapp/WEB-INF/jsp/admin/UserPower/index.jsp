@@ -246,12 +246,10 @@
                                     <div class="form-group">
                                         <label for="example-text-input">权限编号</label>
 <%--                                        <input class="form-control" type="text" name="role-input" placeholder="请输入权限编号" >--%>
-                                        <select class="form-control" name="role-input">
+                                        <select class="form-control" name="role-input" id="area">
 
                                             <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
+
                                         </select>
                                     </div>
                                     <div class="table-responsive">
@@ -330,6 +328,29 @@
 
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/chosen.jquery.min.js"></script>
 <script type="text/javascript">
+    window.onload = function(){
+        $.ajax({
+            url:"list",
+            type:"get",
+            success:function (data) {
+                var list = data.data;
+                console.log(list);
+                $("#area").empty();
+                var html  = "";
+                $.each(list, function(index, item){
+                    html += "<option value='"+item.id+"'>"+item.id+"</option>"
+                });
+                $("#area").append(html);
+            }
+        });
+    }
+
+    $(document).ready(function(){
+
+    })
+
+
+
     $(function () {
         //动态选择框，上下级选中状态变化
         $('input.checkbox-parent').on('change', function () {
