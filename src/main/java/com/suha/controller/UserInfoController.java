@@ -2,7 +2,6 @@ package com.suha.controller;
 
 
 import com.suha.pojo.UserInfo;
-import com.suha.service.BaseService;
 import com.suha.service.UserInfoService;
 import com.suha.util.ResponseCode;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,7 +70,7 @@ public class UserInfoController {
         userInfo.setEmail(email);
         userInfo.setPassword(password);
         userInfo.setTelphone(telphone);
-        userInfoService.addInfo(userInfo);
+        userInfoService.updInfo(userInfo);
         return ResponseCode.ok(userInfo);
 
     }

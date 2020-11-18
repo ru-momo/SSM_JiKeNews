@@ -11,8 +11,9 @@ import org.springframework.data.redis.core.Cursor;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ScanOptions;
 import org.springframework.data.redis.core.ZSetOperations;
+import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
-
+@Service
 public class RedisService {
     // 记录日志
     private Logger log = LoggerFactory.getLogger(this.getClass());

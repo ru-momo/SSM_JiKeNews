@@ -237,6 +237,7 @@
 
             <div class="container-fluid">
 
+
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
@@ -258,7 +259,7 @@
                                     </div>
                                 </form>--%>
                                 <div class="toolbar-btn-action">
-                                    <a data-toggle="modal" data-target="#myModal" class="btn btn-primary m-r-5" onclick="add"><i class="mdi mdi-plus"></i> 新增</a>
+                                    <a data-toggle="modal" data-target="#myModal" class="btn btn-primary m-r-5" ><i class="mdi mdi-plus"></i> 新增</a>
                                     <a class="btn btn-success m-r-5" href="#!"><i class="mdi mdi-check"></i> 启用</a>
                                     <a class="btn btn-warning m-r-5" href="#!"><i class="mdi mdi-block-helper"></i> 禁用</a>
                                     <a class="btn btn-danger" title="删除" href="javascript:void(0)" onclick="del()" id="delSelected"><i class="mdi mdi-window-close"></i> 批量删除</a>
@@ -301,7 +302,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="btn-group">
-                                                        <a class="btn btn-xs btn-default" href="javascript:void(0)" onclick="del(${page.id})" title="删除" data-toggle="tooltip"><i
+                                                        <a class="btn btn-xs btn-default" href="javascript:void(0)" onclick="delInfo(${page.id})" title="删除" data-toggle="tooltip"><i
                                                                 class="mdi mdi-window-close"></i></a>
                                                     </div>
                                                 </td>
@@ -312,16 +313,16 @@
                                     </table>
                                 </div>
                                 <ul class="pagination">
-                                    <li><a href='pagesImg?pageNum=${page.page+1}&img=${img}' ${page.page == page.total ? "style='visibility: hidden;'" : ""} onclick="return click(this)">下一页</a></li>
+                                    <li><a href='pagesImg?pageNum=${page.page+1}&name=${name}' ${page.page == page.total ? "style='visibility: hidden;'" : ""} onclick="return click(this)">下一页</a></li>
                                     <c:forEach begin="1" end="${page.total}" var="num">
                                        <c:if test="${page.page == num}">
                                            <li class="active"><span>${num}</span></li>
                                        </c:if>
                                         <c:if test="${page.page != num}">
-                                            <li><a href='pagesImg?pageNum=${num}&img=${img}'>${num}</a></li>
+                                            <li><a href='pagesImg?pageNum=${num}&name=${name}'>${num}</a></li>
                                         </c:if>
                                     </c:forEach>
-                                    <li><a href='pagesImg?pageNum=${page.total}'&img='${img}'>最后一页</a></li>
+                                    <li><a href='pagesImg?pageNum=${page.total}'&name='${name}'>最后一页</a></li>
                                 </ul>
 
 
@@ -338,8 +339,8 @@
                                                 </h4>
                                             </div>
                                             <div class="modal-body">
-                                                <form id="frm" enctype="multipart/form-data" method="post">
-                                                    <input type="hidden" name="id" id="id"/>
+                                                <form id="frm" enctype="multipart/form-data" method="post" onsubmit="return sumbit_sure()">
+
                                                     <label for="newsId">
                                                         新闻编号:<input type="text" name="newsId" id="newsId" />
                                                     </label>
@@ -390,7 +391,7 @@
     });
     
     
-    function del(id) {
+    function delInfo(id) {
         if(confirm("确定要删除吗？")){
             $.ajax({
                 url:"delInfo?id=" + id,
@@ -420,11 +421,12 @@
                 url:"addInfo",
                 type:"post",
                 data:formData,
-                contentType: false, //必须
+                contentType: "json", //必须
                 processData: false, //必须
                 success:function(data){
                     alert("更新成功")
-                    window.location.reload();
+                    console.log(data)
+                    // window.location.reload();
                 }
             });
         });
