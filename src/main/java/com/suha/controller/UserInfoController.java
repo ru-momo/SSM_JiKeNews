@@ -60,20 +60,18 @@ public class UserInfoController {
         UserInfo info = new UserInfo();
         info.setUserName(username);
         //按照条件查询
-        List<UserInfo> result = userInfoService.getingetInfoByname(info);
+        List<UserInfo> result = userInfoService.getInfoByname(info);
         //结果不为空，说明此用户名已存在
         if(result != null){
             return ResponseCode.error("此用户已被注册!");
         }
-
-
         UserInfo userInfo = new UserInfo();
         userInfo.setUserName(username);
         userInfo.setName(name);
         userInfo.setEmail(email);
         userInfo.setPassword(password);
         userInfo.setTelphone(telphone);
-        userInfoService.insertInfo(userInfo);
+        userInfoService.addInfo(userInfo);
         return ResponseCode.ok(userInfo);
 
     }

@@ -1,6 +1,7 @@
 package com.suha.service;
 
 import com.mysql.cj.util.StringUtils;
+import com.suha.pojo.UserInfo;
 import com.suha.util.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -48,7 +49,7 @@ public class BaseService<T> {
      * @param record
      * @return
      */
-    public List<T> getListByRecord(T record){
+    public List<T> getInfoByname(T record){
         return mapper.select(record);
     }
     /**
@@ -113,6 +114,8 @@ public class BaseService<T> {
         }
         return page ;
     }
+
+
 }
 
 

@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html lang="en">
+<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <title>极客开发者</title>
@@ -114,7 +114,7 @@
         </div>
         <div class="col-sm-3">
             <div class="search-bar">
-                <input type="search" class="form-control" placeholder="搜一下">
+                <input type="search" class="form-control" placeholder="搜一下" id="sousou">
             </div>
             <div class="side-bar-card flag clearfix">
                 <div class="col-xs-5">
