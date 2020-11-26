@@ -10,9 +10,10 @@
 <head>
     <meta charset="UTF-8">
     <title>新闻详情</title>
-    <%--<base href="${pageContext.request.contextPath}">--%>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/frontEnd/css/bootstrap.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/frontEnd/css/main.css">
+    <script type="text/javascript" src="${pageContext.request.contextPath}/static/frontEnd/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/static/frontEnd/index/news.js"></script>
 </head>
 <body>
 
@@ -26,14 +27,10 @@
         <div class="hidden-xs">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="${pageContext.request.contextPath}/">首页</a></li>
-                <li><a href="#">国内</a></li>
-                <li><a href="#">国际</a></li>
-                <li><a href="#">数读</a></li>
-                <li><a href="#">社会</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="login.html">登陆</a></li>
-                <li><a href="signup.html">注册</a></li>
+                <li><a href="../front/login">登陆</a></li>
+                <li><a href="../front/signup">注册</a></li>
             </ul>
         </div>
     </div>
@@ -43,7 +40,7 @@
         <h1 class="news-title">两年前他为教育事业和高圆圆分手，如今这般，高圆圆：我有一句MMP如鳊在喉</h1>
         <div class="news-status">25k阅读•35分钟前发布
             <div class="label label-default">教育</div>
-            <div class="label label-default">情感</div>
+<%--            <div class="label label-default">情感</div>--%>
         </div>
         <div class="news-content">
             <blockquote>

@@ -17,11 +17,7 @@
         <input type="checkbox" class="hidden" id="toggle-checkbox">
         <div class="hidden-xs">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="${pageContext.request.contextPath}">首页</a></li>
-                <li><a href="${pageContext.request.contextPath}/front/internal">国内</a></li>
-                <li><a href="${pageContext.request.contextPath}/front/external">国际</a></li>
-                <li><a href="${pageContext.request.contextPath}/front/fastRead">速读</a></li>
-                <li><a href="${pageContext.request.contextPath}/front/society">社会</a></li>
+                <li><a href="${pageContext.request.contextPath}">首页</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="${pageContext.request.contextPath}/front/login">登陆</a></li>

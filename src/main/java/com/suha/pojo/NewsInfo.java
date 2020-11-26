@@ -2,14 +2,12 @@ package com.suha.pojo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
-import org.apache.ibatis.annotations.ConstructorArgs;
-import org.springframework.data.annotation.Id;
-
+import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
-import java.text.SimpleDateFormat;
 import java.util.Date;
+
 @Data
 @Table(name = "news_info")
 public class NewsInfo {
