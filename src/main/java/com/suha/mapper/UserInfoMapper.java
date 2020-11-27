@@ -23,7 +23,7 @@ public interface UserInfoMapper extends Mapper<UserInfo>, Page<UserInfo> {
      *
      */
     Integer getListCountByPage(Map<String, Object> map);
-
-
+    //  登录
+    UserInfo login(@Param("userName") String userName,@Param("password") String password);
 
 }

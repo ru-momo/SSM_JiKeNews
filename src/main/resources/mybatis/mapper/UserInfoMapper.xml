@@ -22,7 +22,7 @@
         </where>
     </sql>
 
-    <select id="findByUserName" parameterType="UserInfo">
+    <select id="login" resultMap="BaseResultMap">
         select * from user_info where user_name=#{userName} and password=#{password}
     </select>
 
