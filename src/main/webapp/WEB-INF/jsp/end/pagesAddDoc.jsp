@@ -239,104 +239,69 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-
-                                <form action="#!" method="post" class="row">
+                                <form  method="post" class="row">
                                     <div class="form-group col-md-12">
-                                        <label for="type">栏目</label>
-                                        <div class="form-controls">
-                                            <select name="type" class="form-control" id="type">
-                                                <option value="1">小说</option>
-                                                <option value="2">古籍</option>
-                                                <option value="3">专辑</option>
-                                                <option value="4">自传</option>
-                                            </select>
+                                        <div class="form-group col-md-12">
+                                            <label for="type">栏目</label>
+                                            <div class="form-controls">
+                                                <select name="type" class="form-control" id="type">
+                                                    <option value="文章">文章</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
                                     <div class="form-group col-md-12">
                                         <label for="title">标题</label>
                                         <input type="text" class="form-control" id="title" name="title" value="" placeholder="请输入标题" />
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label for="seo_keywords">关键词</label>
-                                        <input type="text" class="form-control" id="seo_keywords" name="seo_keywords" value=""
-                                               placeholder="关键词" />
+                                        <label for="seo_keywords">简介</label>
+                                        <input type="text" class="form-control" id="seo_keywords" name="introduction" value=""
+                                               placeholder="简介" />
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label for="seo_description">描述</label>
-                                        <textarea class="form-control" id="seo_description" name="seo_description" rows="5" value=""
-                                                  placeholder="描述"></textarea>
+                                        <label for="seo_description">详情</label>
+                                        <textarea class="form-control" id="seo_description" name="content" rows="5" value=""
+                                                  placeholder="详情"></textarea>
                                     </div>
-                                    <div class="form-group col-md-12">
-                                        <label>多图上传</label>
-                                        <div class="form-controls">
+                                        <div class="form-group col-md-12">
+                                            <label>多图上传</label>
+                                            <%--<input type="file" id="file"/>--%>
+                                            <div class="form-controls">
+                                                <ul class="list-inline clearfix lyear-uploads-pic" id="imgAll">
+                                                    <%--<li class="col-xs-4 col-sm-3 col-md-2">--%>
+                                                        <%--<figure>--%>
+                                                            <%--<img src="http://inews.gtimg.com/newsapp_ls/0/12749342916_640330/0" >--%>
+                                                            <%--<figcaption>--%>
+                                                                <%--<a class="btn btn-round btn-square btn-danger" href="${pageContext.request.contextPath}/end/pagesAddDoc/del"><i--%>
+                                                                        <%--class="mdi mdi-delete"></i></a>--%>
+                                                            <%--</figcaption>--%>
+                                                        <%--</figure>--%>
+                                                    <%--</li>--%>
+                                                    <li  class="col-xs-4 col-sm-3 col-md-2" id="nodelast">
+                                                        <a class="pic-add" id="add-pic-btn" href="#！" onclick="pull()" title="点击上传"></a>
+                                                    </li>
+                                                </ul>
 
-                                            <ul class="list-inline clearfix lyear-uploads-pic" id="imgAll">
-                                                <li class="col-xs-4 col-sm-3 col-md-2">
-                                                  <figure>
-                                                    <img src="${pageContext.request.contextPath}/static/backEnd/images/gallery/15.jpg" alt="图片一">
-                                                    <figcaption>
-                                                      <a class="btn btn-round btn-square btn-primary" href="#!"><i
-                                                          class="mdi mdi-eye"></i></a>
-                                                      <a class="btn btn-round btn-square btn-danger" href="#!"><i
-                                                          class="mdi mdi-delete"></i></a>
-                                                    </figcaption>
-                                                  </figure>
-                                                </li>
-                                                <li class="col-xs-4 col-sm-3 col-md-2">
-                                                  <figure>
-                                                    <img src="${pageContext.request.contextPath}/static/backEnd/images/gallery/16.jpg" alt="图片二">
-                                                    <figcaption>
-                                                      <a class="btn btn-round btn-square btn-primary" href="#!"><i
-                                                          class="mdi mdi-eye"></i></a>
-                                                      <a class="btn btn-round btn-square btn-danger" href="#!"><i
-                                                          class="mdi mdi-delete"></i></a>
-                                                    </figcaption>
-                                                  </figure>
-                                                </li>
-                                                <li class="col-xs-4 col-sm-3 col-md-2">
-                                                  <figure>
-                                                    <img src="${pageContext.request.contextPath}/static/backEnd/images/gallery/17.jpg" alt="图片三">
-                                                    <figcaption>
-                                                      <a class="btn btn-round btn-square btn-primary" href="#!"><i
-                                                          class="mdi mdi-eye"></i></a>
-                                                      <a class="btn btn-round btn-square btn-danger" href="#!"><i
-                                                          class="mdi mdi-delete"></i></a>
-                                                    </figcaption>
-                                                  </figure>
-                                                </li>
-                                                <li class="col-xs-4 col-sm-3 col-md-2" id="nodelast">
-                                                    <a class="pic-add" id="add-pic-btn" href="#!" title="点击上传" onclick="pull()"></a>
-                                                </li>
-                                            </ul>
+
+
+                                                </ulclass>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group col-md-12">
-                                        <label for="content">内容</label>
-                                        <p>HTML编辑器这里就不做演示了</p>
-                                    </div>
-                                    <div class="form-group col-md-12">
-                                        <label for="tags">标签</label>
-                                        <input class="js-tags-input form-control" type="text" id="tags" name="tags" value="" />
-                                    </div>
-                                    <div class="form-group col-md-12">
-                                        <label for="sort">排序</label>
-                                        <input type="text" class="form-control" id="sort" name="sort" value="0" />
-                                    </div>
-                                    <div class="form-group col-md-12">
+                                        <div class="form-group col-md-12">
                                         <label for="status">状态</label>
                                         <div class="clearfix">
                                             <label class="lyear-radio radio-inline radio-primary">
-                                                <input type="radio" name="status" value="0"><span>禁用</span>
+                                                <input type="radio" name="statu" value="1" checked><span>启用</span>
                                             </label>
                                             <label class="lyear-radio radio-inline radio-primary">
-                                                <input type="radio" name="status" value="1" checked><span>启用</span>
+                                                <input type="radio" name="statu" value="0"><span>禁用</span>
                                             </label>
                                         </div>
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <button type="submit" class="btn btn-primary ajax-post" target-form="add-form">确 定</button>
-                                        <button type="button" class="btn btn-default"
-                                                onclick="javascript:history.back(-1);return false;">返 回</button>
+                                        <button type="button" class="btn btn-primary ajax-post" target-form="add-form" id="btn">确 定</button>
+                                        <button type="button" class="btn btn-default" id="backid">返 回</button>
+                                    </div>
                                     </div>
                                 </form>
 
@@ -361,12 +326,37 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/main.min.js"></script>
 
 <script type="text/javascript">
+
+    <%--提交按钮--%>
+    $(function () {
+        $("#btn").click(function(){
+            var data = $(".row").serialize();
+            $.ajax({
+                url:"${pageContext.request.contextPath}/end/pagesAddDoc" ,
+                type:"post" ,
+                data:data,
+                success:function(data){
+                    if(data.code == "200"){
+                        alert("数据提交成功")
+                        window.location.href= "${pageContext.request.contextPath}/end/index";
+                    }else{
+                        alert("数据提交失败")
+                    }
+                }
+            });
+        });
+
+        //返回按钮
+        $('#backid').click(function(){
+            window.location.href="${pageContext.request.contextPath}/end/index";
+        });
+    });
+
     function pull() {
         var html = "<li class='col-xs-4 col-sm-3 col-md-2' id='node2' style='display: none;'>" +
             "<figure>" +
-            "<img src='${pageContext.request.contextPath}/static/backEnd/images/gallery/17.jpg' alt='图片二'>" +
+            "<img src='${newImfInfo.img }'>" +
             "<figcaption>" +
-            "<a class='btn btn-round btn-square btn-primary' href='#!''><i class='mdi mdi-eye'></i></a>" +
             "<a class='btn btn-round btn-square btn-danger' href='#!''><i class='mdi mdi-delete'></i></a>" +
             "<input type='file' style='display: none;' id='pullfile2'> " +
             "</figcaption>" +
@@ -381,7 +371,6 @@
         });
 
     }
-
 
 
 
