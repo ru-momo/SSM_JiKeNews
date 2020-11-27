@@ -8,26 +8,20 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-import static java.awt.SystemColor.info;
-
 @Controller
-@RequestMapping("admin/UserPower")
+@RequestMapping(value = "end/UserPower/")
 public class UserPowerInfoController {
 
     @Autowired
     private UserPowerInfoService us;
 
-    @RequestMapping("{path}")
+   @RequestMapping("{path}")
     public String path(@PathVariable String path) {
-        System.out.println("111" + path);
-        return "admin/UserPower/" + path;
+        return  "end/"+path;
     }
-
 
     //添加用户
     @RequestMapping(value = "addInfo", method = RequestMethod.POST)
@@ -134,7 +128,7 @@ public class UserPowerInfoController {
         }
         us.updInfo(info);
         System.out.println("成功" + info);
-        return "a";
+        return "end/pagesRabc";
     }
 
     @ResponseBody

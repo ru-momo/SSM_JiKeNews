@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
-  Date: 2020/11/12
-  Time: 20:18
+  Date: 2020/11/11
+  Time: 10:51
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -12,13 +12,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <title>设置权限 - 光年(Light Year Admin)后台管理系统模板</title>
-    <link rel="icon" href="${pageContext.request.contextPath}/static/backEnd/favicon.ico" type="image/ico">
+    <link rel="icon" href="favicon.ico" type="image/ico">
     <meta name="keywords" content="LightYear,光年,后台模板,后台管理系统,光年HTML模板">
     <meta name="description" content="LightYear是一个基于Bootstrap v3.3.7的后台管理系统的HTML模板。">
     <meta name="author" content="yinqi">
-    <link href="${pageContext.request.contextPath}/static/backEnd/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/static/backEnd/css/materialdesignicons.min.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/static/backEnd/css/style.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/css/style.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -29,24 +29,24 @@
 
             <!-- logo -->
             <div id="logo" class="sidebar-header">
-                <a href="index.html"><img src="${pageContext.request.contextPath}/static/backEnd/images/logo-sidebar.png" title="LightYear" alt="LightYear" /></a>
+                <a href="index.html"><img src="${pageContext.request.contextPath}/static/images/logo-sidebar.png" title="LightYear" alt="LightYear" /></a>
             </div>
             <div class="lyear-layout-sidebar-scroll">
 
                 <nav class="sidebar-main">
                     <ul class="nav nav-drawer">
-                        <li class="nav-item"> <a href="${pageContext.request.contextPath}/end/index"><i class="mdi mdi-home"></i> 后台首页</a> </li>
+                        <li class="nav-item"> <a href="index.html"><i class="mdi mdi-home"></i> 后台首页</a> </li>
                         <li class="nav-item nav-item-has-subnav active open">
                             <a href="javascript:void(0)"><i class="mdi mdi-file-outline"></i> 示例页面</a>
                             <ul class="nav nav-subnav">
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesDoc">文档列表</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesGallery">图库列表</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesConfig">网站配置</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesRabc">设置权限</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesAddDoc">新增文档</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesGuide">表单向导</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesLogin">登录页面</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesError">错误页面</a> </li>
+                                <li> <a href="lyear_pages_doc.html">文档列表</a> </li>
+                                <li> <a href="lyear_pages_gallery.html">图库列表</a> </li>
+                                <li> <a href="lyear_pages_config.html">网站配置</a> </li>
+                                <li class="active"> <a href="lyear_pages_rabc.html">设置权限</a> </li>
+                                <li> <a href="lyear_pages_add_doc.html">新增文档</a> </li>
+                                <li> <a href="lyear_pages_guide.html">表单向导</a> </li>
+                                <li> <a href="lyear_pages_login.html">登录页面</a> </li>
+                                <li> <a href="lyear_pages_error.html">错误页面</a> </li>
                             </ul>
                         </li>
                     </ul>
@@ -75,15 +75,15 @@
                     <ul class="topbar-right">
                         <li class="dropdown dropdown-profile">
                             <a href="javascript:void(0)" data-toggle="dropdown">
-                                <img class="img-avatar img-avatar-48 m-r-10" src="${pageContext.request.contextPath}/static/backEnd/images/users/avatar.jpg" alt="笔下光年" />
+                                <img class="img-avatar img-avatar-48 m-r-10" src="${pageContext.request.contextPath}/static/images/users/avatar.jpg" alt="笔下光年" />
                                 <span>笔下光年 <span class="caret"></span></span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-right">
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesProfileLogin"><i class="mdi mdi-account"></i> 个人信息</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesEditPwd"><i class="mdi mdi-lock-outline"></i> 修改密码</a> </li>
+                                <li> <a href="lyear_pages_profile.html"><i class="mdi mdi-account"></i> 个人信息</a> </li>
+                                <li> <a href="lyear_pages_edit_pwd.html"><i class="mdi mdi-lock-outline"></i> 修改密码</a> </li>
                                 <li> <a href="javascript:void(0)"><i class="mdi mdi-delete"></i> 清空缓存</a></li>
                                 <li class="divider"></li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesLogin"><i class="mdi mdi-logout-variant"></i> 退出登录</a> </li>
+                                <li> <a href="lyear_pages_login.html"><i class="mdi mdi-logout-variant"></i> 退出登录</a> </li>
                             </ul>
                         </li>
                         <!--切换主题配色-->
@@ -242,10 +242,15 @@
                             </div>
                             <div class="card-body">
 
-                                <form action="#!" method="post">
+                                <form action="getName" method="post">
                                     <div class="form-group">
-                                        <label for="example-text-input">角色名称</label>
-                                        <input class="form-control" type="text" name="role-input" placeholder="角色名称">
+                                        <label for="example-text-input">权限编号</label>
+                                        <%--                                        <input class="form-control" type="text" name="role-input" placeholder="请输入权限编号" >--%>
+                                        <select class="form-control" name="role-input" id="area">
+
+                                            <option>1</option>
+
+                                        </select>
                                     </div>
                                     <div class="table-responsive">
                                         <table class="table table-striped">
@@ -264,68 +269,43 @@
                                             <tr>
                                                 <td>
                                                     <label class="lyear-checkbox checkbox-primary">
-                                                        <input name="rules[]" type="checkbox" class="checkbox-parent" dataid="id-2" value="2">
-                                                        <span> 用户管理</span>
+                                                        <input name="rules[]" type="checkbox" class="checkbox-parent" dataid="id-2" value="2" >
+                                                        <span> 权限管理</span>
                                                     </label>
                                                 </td>
                                             </tr>
 
-                                            <tr>
-                                                <td class="p-l-20">
-                                                    <label class="lyear-checkbox checkbox-primary">
-                                                        <input name="rules[]" type="checkbox" class="checkbox-parent checkbox-child"
-                                                               dataid="id-2-12" value="12">
-                                                        <span> 用户管理</span>
-                                                    </label>
-                                                </td>
-                                            </tr>
+
                                             <tr>
                                                 <td class="p-l-40">
                                                     <label class="lyear-checkbox checkbox-primary checkbox-inline checkbox-inline">
                                                         <input name="rules[]" type="checkbox" class="checkbox-child" dataid="id-2-12-62"
-                                                               value="62">
-                                                        <span> 添加用户</span>
+                                                               value="62" >
+                                                        <span> 查看用户权限</span>
                                                     </label>
                                                     <label class="lyear-checkbox checkbox-primary checkbox-inline checkbox-inline">
                                                         <input name="rules[]" type="checkbox" class="checkbox-child" dataid="id-2-12-63"
-                                                               value="63">
-                                                        <span> 编辑用户</span>
+                                                               value="63" >
+                                                        <span> 查看新闻权限</span>
                                                     </label>
                                                     <label class="lyear-checkbox checkbox-primary checkbox-inline checkbox-inline">
                                                         <input name="rules[]" type="checkbox" class="checkbox-child" dataid="id-2-12-64"
-                                                               value="64">
-                                                        <span> 删除用户</span>
+                                                               value="64" >
+                                                        <span> 管理用户权限</span>
                                                     </label>
                                                     <label class="lyear-checkbox checkbox-primary checkbox-inline checkbox-inline">
                                                         <input name="rules[]" type="checkbox" class="checkbox-child" dataid="id-2-12-65"
-                                                               value="65">
-                                                        <span> 启用/禁用用户</span>
-                                                    </label>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <label class="lyear-checkbox checkbox-primary">
-                                                        <input name="rules[]" type="checkbox" class="checkbox-parent" dataid="id-4" value="4">
-                                                        <span> 扩展管理</span>
+                                                               value="65" >
+                                                        <span> 管理新闻权限</span>
                                                     </label>
                                                 </td>
                                             </tr>
 
 
-
-                                            <tr>
-                                                <td class="p-l-40">
-                                                    <label class="lyear-checkbox checkbox-primary">
-                                                        <input name="rules[]" type="checkbox" class="checkbox-child" dataid="id-4-66-67"
-                                                               value="67">
-                                                        <span> 上传图片</span>
-                                                    </label>
-                                                </td>
-                                            </tr>
                                             </tbody>
                                         </table>
                                     </div>
+                                    <input type="submit" value="提交">
                                 </form>
 
                             </div>
@@ -341,13 +321,36 @@
     </div>
 </div>
 
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/jquery.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/perfect-scrollbar.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/main.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/perfect-scrollbar.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/main.min.js"></script>
 
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/chosen.jquery.min.js"></script>
 <script type="text/javascript">
+    window.onload = function(){
+        $.ajax({
+            url:"list",
+            type:"get",
+            success:function (data) {
+                var list = data.data;
+                console.log(list);
+                $("#area").empty();
+                var html  = "";
+                $.each(list, function(index, item){
+                    html += "<option value='"+item.id+"'>"+item.id+"</option>"
+                });
+                $("#area").append(html);
+            }
+        });
+    }
+
+    $(document).ready(function(){
+
+    })
+
+
+
     $(function () {
         //动态选择框，上下级选中状态变化
         $('input.checkbox-parent').on('change', function () {
@@ -386,3 +389,4 @@
 </body>
 
 </html>
+
