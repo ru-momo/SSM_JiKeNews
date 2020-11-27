@@ -30,25 +30,24 @@
         </div>
     </div>
 </div>
+
 <div class="container container-small">
     <h1>登录
         <small>没有帐号？<a href="${pageContext.request.contextPath}/front/signup">注册</a></small>
     </h1>
-    <form>
+    <form action="login">
         <div class="form-group">
-            <label>用户名/手机/邮箱</label>
-            <input type="text" class="form-control">
+            <label>用户名</label>
+            <input type="text" name="userName" required  lay-verify="required" autocomplete="off" placeholder="请输入用户" class="form-control">
         </div>
         <div class="form-group">
             <label>密码</label>
-            <input type="password" class="form-control">
+            <input type="password" name="password" required  lay-verify="required" autocomplete="off" placeholder="请输入密码" class="form-control">
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-block">登录</button>
         </div>
-        <div class="form-group">
-            <a href="#">忘记密码？</a>
-        </div>
+
     </form>
 </div>
 <div class="footer">

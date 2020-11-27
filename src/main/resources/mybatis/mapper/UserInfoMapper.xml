@@ -13,25 +13,22 @@
        <result column="information" jdbcType="VARCHAR" property="information"/>
        <result column="telphone" jdbcType="VARCHAR" property="telphone"/>
    </resultMap>
-<!--    <select id="findPassword" parameterType="com.suha.pojo.UserInfo">-->
-<!--        select * from user_info-->
-<!--        where password = #{password}-->
 
-<!--        <if test="name!=null and name!=''">-->
-<!--            and userName = #{userName}-->
-<!--        </if>-->
-<!--    </select>-->
-<!--    lowers 是大写全部换成小写-->
     <sql id="user_info_where">
         <where>
             <if test="userName != null and userName != ''">
-                and lower(nameName) like lower(concat('%','${nameName}','%'))
+                and lower(user_name) like lower(concat('%','${userName}','%'))
             </if>
         </where>
     </sql>
+
+    <select id="findByUserName" parameterType="UserInfo">
+        select * from user_info where user_name=#{userName} and password=#{password}
+    </select>
+
 <!--    分页查询-->
     <select id="getListInfoByPage" parameterType="map" resultMap="BaseResultMap">
-        select id , userName , password , name,email,information,telphone from user_info
+        select id , user_name , password , name,email,information,telphone from user_info
         <include refid="user_info_where"></include>
         <if test="startIndex != null and pageSize != null">
             limit #{startIndex} , #{pageSize}

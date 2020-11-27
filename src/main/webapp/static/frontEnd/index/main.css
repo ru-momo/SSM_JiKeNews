@@ -1,0 +1,14 @@
+#div_digg1 {
+    padding: 5px;
+    position: fixed;
+    _position: absolute;
+    z-index: 10000;
+    bottom: 5%;
+    left: 3.5%;
+    _left: 5px;
+    border: 0;
+}
+
+.playIframe{
+    border: medium none;
+}

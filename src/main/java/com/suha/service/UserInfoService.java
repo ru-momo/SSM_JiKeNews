@@ -16,6 +16,7 @@ import java.util.Map;
 @Service
 public class UserInfoService extends BaseService<UserInfo>{
 
+
     @Autowired
     private UserInfoMapper um;
 

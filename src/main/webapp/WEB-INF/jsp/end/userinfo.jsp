@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
@@ -256,7 +257,7 @@
                                     </div>
                                 </form>
                                 <div class="toolbar-btn-action">
-                                    <a class="btn btn-primary m-r-5" href="#!"><i class="mdi mdi-plus"></i> 新增</a>
+                                    <a data-toggle="modal" data-target="#addModal" class="btn btn-primary m-r-5" href="#!"><i class="mdi mdi-plus"></i> 新增</a>
                                     <a class="btn btn-success m-r-5" href="#!"><i class="mdi mdi-check"></i> 启用</a>
                                     <a class="btn btn-warning m-r-5" href="#!"><i class="mdi mdi-block-helper"></i> 禁用</a>
                                     <a class="btn btn-danger" href="#!"><i class="mdi mdi-window-close"></i> 删除</a>
@@ -274,263 +275,121 @@
                                                 </label>
                                             </th>
                                             <th>编号</th>
-                                            <th>标题</th>
-                                            <th>书籍</th>
-                                            <th>作者</th>
-                                            <th>阅读量</th>
-                                            <th>状态</th>
+                                            <th>用户名</th>
+                                            <th>密码</th>
+                                            <th>姓名</th>
+                                            <th>邮箱</th>
+                                            <th>信息</th>
+                                            <th>手机号</th>
                                             <th>操作</th>
+
+
                                         </tr>
                                         </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>
-                                                <label class="lyear-checkbox checkbox-primary">
-                                                    <input type="checkbox" name="ids[]" value="1"><span></span>
-                                                </label>
-                                            </td>
-                                            <td>1</td>
-                                            <td>第01章 天涯思君不可忘</td>
-                                            <td>《倚天屠龙记》</td>
-                                            <td>金庸</td>
-                                            <td>36</td>
-                                            <td>
-                                                <font class="text-success">正常</font>
-                                            </td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <a class="btn btn-xs btn-default" href="#!" title="编辑" data-toggle="tooltip"><i
-                                                            class="mdi mdi-pencil"></i></a>
-                                                    <a class="btn btn-xs btn-default" href="#!" title="删除" data-toggle="tooltip"><i
-                                                            class="mdi mdi-window-close"></i></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label class="lyear-checkbox checkbox-primary">
-                                                    <input type="checkbox" name="ids[]" value="2"><span></span>
-                                                </label>
-                                            </td>
-                                            <td>2</td>
-                                            <td>第01章 古道腾驹惊白发，危峦快剑识青翎</td>
-                                            <td>《书剑恩仇录》</td>
-                                            <td>金庸</td>
-                                            <td>44</td>
-                                            <td>
-                                                <font class="text-success">正常</font>
-                                            </td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <a class="btn btn-xs btn-default" href="#!" title="编辑" data-toggle="tooltip"><i
-                                                            class="mdi mdi-pencil"></i></a>
-                                                    <a class="btn btn-xs btn-default" href="#!" title="删除" data-toggle="tooltip"><i
-                                                            class="mdi mdi-window-close"></i></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label class="lyear-checkbox checkbox-primary">
-                                                    <input type="checkbox" name="ids[]" value="3"><span></span>
-                                                </label>
-                                            </td>
-                                            <td>3</td>
-                                            <td>一个戴水獭皮帽子的朋友</td>
-                                            <td>《湘行散记》</td>
-                                            <td>沈从文</td>
-                                            <td>39</td>
-                                            <td>
-                                                <font class="text-success">正常</font>
-                                            </td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <a class="btn btn-xs btn-default" href="#!" title="编辑" data-toggle="tooltip"><i
-                                                            class="mdi mdi-pencil"></i></a>
-                                                    <a class="btn btn-xs btn-default" href="#!" title="删除" data-toggle="tooltip"><i
-                                                            class="mdi mdi-window-close"></i></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label class="lyear-checkbox checkbox-primary">
-                                                    <input type="checkbox" name="ids[]" value="4"><span></span>
-                                                </label>
-                                            </td>
-                                            <td>4</td>
-                                            <td>你是要灼灼容颜，还是要宜其室家</td>
-                                            <td>《诗三百：思无邪》</td>
-                                            <td>安意如</td>
-                                            <td>36</td>
-                                            <td>
-                                                <font class="text-success">正常</font>
-                                            </td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <a class="btn btn-xs btn-default" href="#!" title="编辑" data-toggle="tooltip"><i
-                                                            class="mdi mdi-pencil"></i></a>
-                                                    <a class="btn btn-xs btn-default" href="#!" title="删除" data-toggle="tooltip"><i
-                                                            class="mdi mdi-window-close"></i></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label class="lyear-checkbox checkbox-primary">
-                                                    <input type="checkbox" name="ids[]" value="5"><span></span>
-                                                </label>
-                                            </td>
-                                            <td>5</td>
-                                            <td>海上的消息</td>
-                                            <td>《打开心内的窗》</td>
-                                            <td>林清玄</td>
-                                            <td>32</td>
-                                            <td>
-                                                <font class="text-success">正常</font>
-                                            </td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <a class="btn btn-xs btn-default" href="#!" title="编辑" data-toggle="tooltip"><i
-                                                            class="mdi mdi-pencil"></i></a>
-                                                    <a class="btn btn-xs btn-default" href="#!" title="删除" data-toggle="tooltip"><i
-                                                            class="mdi mdi-window-close"></i></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label class="lyear-checkbox checkbox-primary">
-                                                    <input type="checkbox" name="ids[]" value="6"><span></span>
-                                                </label>
-                                            </td>
-                                            <td>6</td>
-                                            <td>楔子 一阕词来 南国清秋魂梦绕 十年人散 绣房红烛剑光寒</td>
-                                            <td>《七剑下天山》</td>
-                                            <td>梁羽生</td>
-                                            <td>42</td>
-                                            <td>
-                                                <font class="text-success">正常</font>
-                                            </td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <a class="btn btn-xs btn-default" href="#!" title="编辑" data-toggle="tooltip"><i
-                                                            class="mdi mdi-pencil"></i></a>
-                                                    <a class="btn btn-xs btn-default" href="#!" title="删除" data-toggle="tooltip"><i
-                                                            class="mdi mdi-window-close"></i></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label class="lyear-checkbox checkbox-primary">
-                                                    <input type="checkbox" name="ids[]" value="7"><span></span>
-                                                </label>
-                                            </td>
-                                            <td>7</td>
-                                            <td>祝福</td>
-                                            <td>《彷徨》</td>
-                                            <td>鲁迅</td>
-                                            <td>40</td>
-                                            <td>
-                                                <font class="text-success">正常</font>
-                                            </td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <a class="btn btn-xs btn-default" href="#!" title="编辑" data-toggle="tooltip"><i
-                                                            class="mdi mdi-pencil"></i></a>
-                                                    <a class="btn btn-xs btn-default" href="#!" title="删除" data-toggle="tooltip"><i
-                                                            class="mdi mdi-window-close"></i></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label class="lyear-checkbox checkbox-primary">
-                                                    <input type="checkbox" name="ids[]" value="8"><span></span>
-                                                </label>
-                                            </td>
-                                            <td>8</td>
-                                            <td>一个女长年的故事</td>
-                                            <td>《莫泊桑短篇小说集》</td>
-                                            <td>莫泊桑</td>
-                                            <td>36</td>
-                                            <td>
-                                                <font class="text-success">正常</font>
-                                            </td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <a class="btn btn-xs btn-default" href="#!" title="编辑" data-toggle="tooltip"><i
-                                                            class="mdi mdi-pencil"></i></a>
-                                                    <a class="btn btn-xs btn-default" href="#!" title="删除" data-toggle="tooltip"><i
-                                                            class="mdi mdi-window-close"></i></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label class="lyear-checkbox checkbox-primary">
-                                                    <input type="checkbox" name="ids[]" value="9"><span></span>
-                                                </label>
-                                            </td>
-                                            <td>9</td>
-                                            <td>第一回 赈民饥包公奉旨　图谋害庞相施计</td>
-                                            <td>《五虎征西》</td>
-                                            <td>李雨堂</td>
-                                            <td>35</td>
-                                            <td>
-                                                <font class="text-success">正常</font>
-                                            </td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <a class="btn btn-xs btn-default" href="#!" title="编辑" data-toggle="tooltip"><i
-                                                            class="mdi mdi-pencil"></i></a>
-                                                    <a class="btn btn-xs btn-default" href="#!" title="删除" data-toggle="tooltip"><i
-                                                            class="mdi mdi-window-close"></i></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label class="lyear-checkbox checkbox-primary">
-                                                    <input type="checkbox" name="ids[]" value="10"><span></span>
-                                                </label>
-                                            </td>
-                                            <td>10</td>
-                                            <td>第一回 于按察山东赴任　邹其仁赴路登程</td>
-                                            <td>《于公案》</td>
-                                            <td>佚名</td>
-                                            <td>37</td>
-                                            <td>
-                                                <font class="text-success">正常</font>
-                                            </td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <a class="btn btn-xs btn-default" href="#!" title="编辑" data-toggle="tooltip"><i
-                                                            class="mdi mdi-pencil"></i></a>
-                                                    <a class="btn btn-xs btn-default" href="#!" title="删除" data-toggle="tooltip"><i
-                                                            class="mdi mdi-window-close"></i></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        </tbody>
+<%--                                        <%--%>
+<%--                                            System.out.println(pageContext.getAttribute("page"));--%>
+<%--                                        %>--%>
+<%--                                        ${page.rows}--%>
+
+                                        <c:forEach items="${page.rows}" var="user">
+                                            <tr>
+                                                <td>
+                                                    <label class="lyear-checkbox checkbox-primary">
+                                                        <input type="checkbox" name="id" value="${user.id}" ><span></span>
+                                                    </label>
+                                                </td>
+                                                <td>${user.id}</td>
+                                                <td>${user.userName}</td>
+                                                <td>${user.password}</td>
+                                                <td>${user.name}</td>
+                                                <td>${user.email}</td>
+                                                <td>${user.information}</td>
+                                                <td>${user.telphone}</td>
+
+                                                <td>
+<%--                                                    <a onclick="updInfo(${user.id})" href="${pageContext.request.contextPath}/end/userupd?id=${user.id()}" class="btn btn-warning">编辑</a>--%>
+                                                    <a href="${pageContext.request.contextPath}/end/toUpdataUser?id=${user.id}" class="btn btn-warning">编辑</a>
+                                                    <a href="javascript:void(0)" onclick="del(${user.id})" class="btn btn-danger">删除</a>
+                                                </td>
+                                            </tr>
+                                        </c:forEach>
+
+                                    </table>
+
+                                    <div class="inline pull-right page">
+                                        ${page.page}/${page.total} 页 <a href='index?pageNum=${page.page+1}&name=${name}'
+                                    ${page.page == page.total ? "style='visibility: hidden;'" : ""} onclick="return click(this)">下一页</a>
+                                        <c:forEach begin="1" end="${page.total}" var="num">
+                                            <c:if test="${page.page == num}">
+                                                <span class='current'>${num}</span>
+                                            </c:if>
+                                            <c:if test="${page.page != num}">
+                                                <a href='index?pageNum=${num}&name=${name}'>${num}</a>
+                                            </c:if>
+                                        </c:forEach>
+                                        <a href='index?pageNum=${page.total}&name=${name}'>最后一页</a>
+
+
+                                            <!-- 添加模态框（Modal） -->
+                                            <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                                                &times;
+                                                            </button>
+                                                            <h4 class="modal-title" id="myModalLabel">
+                                                                新增用户信息
+                                                            </h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form id="addfrm" enctype="multipart/form-data" method="post" onsubmit="return sumbit_sure()">
+
+                                                                <label for="userName">
+                                                                    用户名: <input type="text" name="userName" id="userName" />
+                                                                </label>
+                                                                <br />
+                                                                <label for="password">
+                                                                    密码: <input type="text" name="password" id="password" value="123456"/>
+                                                                </label>
+                                                                <br />
+                                                                <label for="name">
+                                                                    姓名: <input type="text" name="name" id="name" />
+                                                                </label>
+                                                                <br />
+                                                                <label for="email">
+                                                                    邮箱: <input type="text" name="email" id="email" />
+                                                                </label>
+                                                                <br />
+                                                                <label for="information">
+                                                                    信息: <input type="text" name="information" id="information" value="普通用户"/>
+                                                                </label>
+                                                                <br />
+                                                                <label for="telphone">
+                                                                    手机号: <input type="text" name="telphone" id="telphone" />
+                                                                </label>
+                                                                <br />
+
+                                                            </form>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                                                            </button>
+                                                            <button type="button" id="addBtn" class="btn btn-primary" >
+                                                                添加
+                                                            </button>
+                                                        </div>
+                                                    </div><!-- /.modal-content -->
+                                                </div><!-- /.modal -->
+                                            </div>
+
+
+
+
+                                    </div>
+
                                     </table>
                                 </div>
-                                <ul class="pagination">
-                                    <li class="disabled"><span>«</span></li>
-                                    <li class="active"><span>1</span></li>
-                                    <li><a href="#1">2</a></li>
-                                    <li><a href="#1">3</a></li>
-                                    <li><a href="#1">4</a></li>
-                                    <li><a href="#1">5</a></li>
-                                    <li><a href="#1">6</a></li>
-                                    <li><a href="#1">7</a></li>
-                                    <li><a href="#1">8</a></li>
-                                    <li class="disabled"><span>...</span></li>
-                                    <li><a href="#!">14452</a></li>
-                                    <li><a href="#!">14453</a></li>
-                                    <li><a href="#!">»</a></li>
-                                </ul>
 
                             </div>
                         </div>
@@ -557,6 +416,81 @@
             $('#search-btn').html($(this).text() + ' <span class="caret"></span>');
         });
     });
+
+    //删除用户
+    function del(id) {
+        if(confirm("确定要删除吗？")){
+            $.ajax({
+                url:"del?id=" + id,
+                type:"get",
+                success:function (data) {
+                    if(data.code == 200){
+                        alert("删除成功");
+                        window.location.href="userinfo";
+                    }else {
+                        alert(data.data);
+                    }
+                }
+            })
+        }
+    }
+    //添加用户
+    //id选择器  class选择器
+    $(function () {
+        $("#addBtn").click(function () {
+            //表单内容序列化
+            var data = $("#addfrm").serialize();
+            console.log(data);
+            $.ajax({
+                url: "adduser",
+                type: "post",
+                data:data,
+                success:function (data) {
+                    if (data.user == "ok"){
+                        //添加成功，提示成功，跳转页面
+                        //重新加载页面
+                        window.location = "userinfo";
+                    }
+                    else {
+                        alert(data.user);
+                    }
+                }
+
+            });
+        });
+    });
+
+    // $(function () {
+    //     $("#updModal").click(function () {
+    //         //对表单进行序列化     参数名=参数值&参数名=参数值
+    //         var data = $("updfrm").serialize();
+    //         $.ajax({
+    //            url:"updInfo",
+    //            type:"post",
+    //            data:data,
+    //             success:function (data) {
+    //                if (data.code=="200") {
+    //                    alert("更改成功");
+    //                    window.location = "userinfo";
+    //                }
+    //                else {
+    //                    alert(data.data)
+    //                }
+    //             }
+    //         });
+    //     });
+    //     $('#backid').click(function(){
+    //         window.location = "userinfo";
+    //     });
+    // });
+
+
+
+
+
+
+
+
 </script>
 </body>
 
