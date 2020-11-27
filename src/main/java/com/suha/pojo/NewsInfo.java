@@ -2,12 +2,12 @@ package com.suha.pojo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
-
+import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
 import java.util.Date;
+
 @Data
 @Table(name = "news_info")
 public class NewsInfo {
@@ -23,8 +23,6 @@ public class NewsInfo {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date pubdate;     //发布日期
     private Integer state;    //状态
-
-
 
 
 }

@@ -108,7 +108,7 @@ function news(type, pageNum){
                     "                        <img src=\""+img[index].img+"\">\n" +
                     "                    </div>\n" +
                     "                    <div class=\"col-xs-7\">\n" +
-                    "                        <a href=\"front/news\" class=\"title\">"+value.title+"</a>\n" +
+                    "                        <a href=\"front/news?id="+value.id+"\" class=\"title\" target='_blank'>"+value.title+"</a>\n" +
                     "                        <div class=\"info\">\n" +
                     "                            <span class=\"avatar\"><img src=\"static/frontEnd/img/logo.png\"></span>\n" +
                     // "                            <span>王花花</span>•\n" +
@@ -152,7 +152,7 @@ function hotnews(type) {
             var html = ""
             $.each(data.data[0],function (index, value) {
                 html += "<div class=\"item\">\n" +
-                    "                            <a class=\"title\" href=\"#\">"+value.title+"</a>\n" +
+                    "                            <a class=\"title\" href=\"front/news?id="+value.id+"\" target='_blank'>"+value.title+"</a>\n" +
                     "                            <div class=\"desc\">"+getDateDiff(value.pubdate)+"</div>\n" +
                     "                        </div>"
             })

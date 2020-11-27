@@ -91,7 +91,7 @@ public class NewsImgInfoController {
         System.out.println(newsId);
         NewsImgInfo record = new NewsImgInfo();
         record.setNewsId(newsId);
-        List<NewsImgInfo> newsImgInfo = newsImgInfoService.getListByRecord(record);
+        List<NewsImgInfo> newsImgInfo = newsImgInfoService.getInfoByname(record);
         if(newsImgInfo.get(0).getNewsId() == null){
             return ResponseCode.paramIsNull();
         }

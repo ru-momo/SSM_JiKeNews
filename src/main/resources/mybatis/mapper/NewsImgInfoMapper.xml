@@ -23,7 +23,7 @@
 
     <!--图片的分页查询 -->
     <select id="getListInfoByPage" parameterType="map" resultMap="ResultMap">
-        select id, news_id, img, pubdate from news_img_info where 1=1
+        select id, newsId, img from news_img_info where 1=1
 
             <if test="img != null and img!= ''">
                 and img like '%${name}%'
@@ -38,7 +38,6 @@
     <!-- 获取图片总数-->
     <select id="getListCountByPage" parameterType="map" resultType="int">
         select count(id) from news_img_info where 1=1
-
             <if test="img != null and img != ''">
                 and  and img like '%${name}%'
             </if>

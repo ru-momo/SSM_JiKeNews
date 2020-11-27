@@ -34,18 +34,18 @@
 
                 <nav class="sidebar-main">
                     <ul class="nav nav-drawer">
-                        <li class="nav-item active"> <a href="${pageContext.request.contextPath}//end/index.jsp"><i class="mdi mdi-home"></i> 后台首页</a> </li>
+                        <li class="nav-item active"> <a href="${pageContext.request.contextPath}/end/index"><i class="mdi mdi-home"></i> 后台首页</a> </li>
                         <li class="nav-item nav-item-has-subnav">
                             <a href="javascript:void(0)"><i class="mdi mdi-file-outline"></i> 示例页面</a>
                             <ul class="nav nav-subnav">
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesImg.jsp">文档列表</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesGallery.jsp">图库列表</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesConfig.jsp">网站配置</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesRabc.jsp">设置权限</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesAddDoc.jsp">新增文档</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesGuide.jsp">表单向导</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesLogin.jsp">登录页面</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesError.jsp">错误页面</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesImg">文档列表</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesGallery">图库列表</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesConfig">网站配置</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesRabc">设置权限</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesAddDoc">新增文档</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesGuide">表单向导</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesLogin">登录页面</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesError">错误页面</a> </li>
                             </ul>
                         </li>
                     </ul>
@@ -77,11 +77,11 @@
                                 <span>笔下光年 <span class="caret"></span></span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-right">
-                                <li> <a href="${pageContext.request.contextPath}/pagesProfile.jsp"><i class="mdi mdi-account"></i> 个人信息</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/pagesEditPwd.jsp"><i class="mdi mdi-lock-outline"></i> 修改密码</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesProfileLogin"><i class="mdi mdi-account"></i> 个人信息</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesEditPwd"><i class="mdi mdi-lock-outline"></i> 修改密码</a> </li>
                                 <li> <a href="javascript:void(0)"><i class="mdi mdi-delete"></i> 清空缓存</a></li>
                                 <li class="divider"></li>
-                                <li> <a href="${pageContext.request.contextPath}/pagesLogin.jsp"><i class="mdi mdi-logout-variant"></i> 退出登录</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesLogin"><i class="mdi mdi-logout-variant"></i> 退出登录</a> </li>
                             </ul>
                         </li>
                         <!--切换主题配色-->
@@ -445,13 +445,13 @@
     </div>
 </div>
 
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/bankEnd/js/jquery.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/bankEnd/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/bankEnd/js/perfect-scrollbar.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/bankEnd/js/main.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/perfect-scrollbar.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/main.min.js"></script>
 
 <!--图表插件-->
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/bankEnd/js/Chart.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/Chart.js"></script>
 <script type="text/javascript">
     $(document).ready(function (e) {
         var $dashChartBarsCnt = jQuery('.js-chartjs-bars')[0].getContext('2d'),
