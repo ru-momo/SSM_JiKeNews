@@ -10,7 +10,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>新增文档 - 光年(Light Year Admin)后台管理系统模板</title>
+    <title>添加新闻 - 光年(Light Year Admin)后台管理系统模板</title>
     <link rel="icon" href="${pageContext.request.contextPath}/static/backEnd/favicon.ico" type="image/ico">
     <meta name="keywords" content="LightYear,光年,后台模板,后台管理系统,光年HTML模板">
     <meta name="description" content="LightYear是一个基于Bootstrap v3.3.7的后台管理系统的HTML模板。">
@@ -67,7 +67,7 @@
                             <span class="lyear-toggler-bar"></span>
                             <span class="lyear-toggler-bar"></span>
                         </div>
-                        <span class="navbar-page-title"> 示例页面 - 新增文档 </span>
+                        <span class="navbar-page-title"> 添加新闻 </span>
                     </div>
 
                     <ul class="topbar-right">
@@ -80,7 +80,7 @@
                                 <li> <a href="${pageContext.request.contextPath}/end/pagesProfileLogin"><i class="mdi mdi-account"></i> 个人信息</a> </li>
                                 <li> <a href="${pageContext.request.contextPath}/end/pagesEditPwd"><i class="mdi mdi-lock-outline"></i> 修改密码</a> </li>
                                 <li class="divider"></li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesLogin"><i class="mdi mdi-logout-variant"></i> 退出登录</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/logout"><i class="mdi mdi-logout-variant"></i> 退出登录</a> </li>
                             </ul>
                         </li>
                         <!--切换主题配色-->
@@ -320,6 +320,12 @@
 <!--标签插件-->
 <script src="${pageContext.request.contextPath}/static/backEnd/js/jquery-tags-input/jquery.tagsinput.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/main.min.js"></script>
+<script type="text/javascript">
+    var user = '<%=session.getAttribute("user")%>';
+    if (user === 'null' || user === ''){
+        window.location.href = "http://localhost:8080/SSM_JIKENews_war_exploded/";
+    }
+</script>
 
 <script type="text/javascript">
 

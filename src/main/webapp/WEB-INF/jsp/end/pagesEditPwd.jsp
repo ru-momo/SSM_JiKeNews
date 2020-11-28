@@ -79,7 +79,7 @@
                                 <li> <a href="${pageContext.request.contextPath}/end/pagesProfileLogin"><i class="mdi mdi-account"></i> 个人信息</a> </li>
                                 <li> <a href="${pageContext.request.contextPath}/end/pagesEditPwd"><i class="mdi mdi-lock-outline"></i> 修改密码</a> </li>
                                 <li class="divider"></li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesLogin"><i class="mdi mdi-logout-variant"></i> 退出登录</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/logout"><i class="mdi mdi-logout-variant"></i> 退出登录</a> </li>
                             </ul>
                         </li>
                         <!--切换主题配色-->
@@ -235,7 +235,7 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <form method="post" action="#!" class="site-form">
+                                <form class="site-form">
                                     <div class="form-group">
                                         <label for="old-password">旧密码</label>
                                         <input type="password" class="form-control" name="oldpwd" id="old-password"
@@ -270,6 +270,14 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/perfect-scrollbar.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/main.min.js"></script>
+<script type="text/javascript">
+    var user = '<%=session.getAttribute("user")%>';
+    alert(user)
+    if (user === 'null' || user === ''){
+        alert("?????")
+        window.location.href = "http://localhost:8080/SSM_JIKENews_war_exploded/";
+    }
+</script>
 </body>
 
 </html>

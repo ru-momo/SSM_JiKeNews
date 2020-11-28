@@ -12,13 +12,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <title>设置权限 - 光年(Light Year Admin)后台管理系统模板</title>
-    <link rel="icon" href="favicon.ico" type="image/ico">
+    <link rel="icon" href="${pageContext.request.contextPath}/static/backEnd/favicon.ico" type="image/ico">
     <meta name="keywords" content="LightYear,光年,后台模板,后台管理系统,光年HTML模板">
     <meta name="description" content="LightYear是一个基于Bootstrap v3.3.7的后台管理系统的HTML模板。">
     <meta name="author" content="yinqi">
-    <link href="${pageContext.request.contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/static/css/materialdesignicons.min.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/static/css/style.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/backEnd/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/backEnd/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/backEnd/css/style.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -29,7 +29,7 @@
 
             <!-- logo -->
             <div id="logo" class="sidebar-header">
-                <a href="${pageContext.request.contextPath}/end/index"><img src="${pageContext.request.contextPath}/static/images/logo-sidebar.png" title="LightYear" alt="LightYear" /></a>
+                <a href="${pageContext.request.contextPath}/end/index"><img src="${pageContext.request.contextPath}/static/backEnd/images/logo-sidebar.png" title="LightYear" alt="LightYear" /></a>
             </div>
             <div class="lyear-layout-sidebar-scroll">
 
@@ -66,20 +66,20 @@
                             <span class="lyear-toggler-bar"></span>
                             <span class="lyear-toggler-bar"></span>
                         </div>
-                        <span class="navbar-page-title"> 示例页面 - 设置权限 </span>
+                        <span class="navbar-page-title"> 设置权限 </span>
                     </div>
 
                     <ul class="topbar-right">
                         <li class="dropdown dropdown-profile">
                             <a href="javascript:void(0)" data-toggle="dropdown">
-                                <img class="img-avatar img-avatar-48 m-r-10" src="${pageContext.request.contextPath}/static/images/users/avatar.jpg" alt="笔下光年" />
+                                <img class="img-avatar img-avatar-48 m-r-10" src="${pageContext.request.contextPath}/static/backEnd/images/users/avatar.jpg" alt="笔下光年" />
                                 <span><%=session.getAttribute("user")%> <span class="caret"></span></span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-right">
                                 <li> <a href="${pageContext.request.contextPath}/end/pagesProfileLogin"><i class="mdi mdi-account"></i> 个人信息</a> </li>
                                 <li> <a href="${pageContext.request.contextPath}/end/pagesEditPwd"><i class="mdi mdi-lock-outline"></i> 修改密码</a> </li>
                                 <li class="divider"></li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesLogin"><i class="mdi mdi-logout-variant"></i> 退出登录</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/logout"><i class="mdi mdi-logout-variant"></i> 退出登录</a> </li>
                             </ul>
                         </li>
                         <!--切换主题配色-->
@@ -301,7 +301,7 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                    <input type="submit" value="提交">
+                                    <input class="btn btn-success" type="submit" value="提交">
                                 </form>
 
                             </div>
@@ -317,12 +317,17 @@
     </div>
 </div>
 
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/jquery.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/perfect-scrollbar.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/main.min.js"></script>
-
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/perfect-scrollbar.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/main.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/chosen.jquery.min.js"></script>
+<script type="text/javascript">
+    var user = '<%=session.getAttribute("user")%>';
+    if (user === 'null' || user === ''){
+        window.location.href = "http://localhost:8080/SSM_JIKENews_war_exploded/";
+    }
+</script>
 <script type="text/javascript">
     window.onload = function(){
         $.ajax({

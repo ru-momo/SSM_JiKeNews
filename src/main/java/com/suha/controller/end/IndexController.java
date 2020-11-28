@@ -67,6 +67,12 @@ public class IndexController {
         }
     }
 
+    /**
+     * 个人信息
+     * @param session
+     * @param model
+     * @return
+     */
     @RequestMapping(value = "end/pagesProfileLogin")
     public String pagesProfileLogin(HttpSession session, Model model){
         String user = (String)session.getAttribute("user");
@@ -75,6 +81,17 @@ public class IndexController {
         List<UserInfo> infoByname = userInfoService.getInfoByname(userInfo);
         model.addAttribute("userInfo",infoByname.get(0));
         return "end/pagesProfileLogin";
+    }
+
+    /**
+     * 后台退出登录
+     * @param session
+     * @return
+     */
+    @RequestMapping(value = "end/logout", method = RequestMethod.GET)
+    public String logout(HttpSession session) {
+        session.setAttribute("user", "");
+        return "redirect:/index.jsp";
     }
 
 }

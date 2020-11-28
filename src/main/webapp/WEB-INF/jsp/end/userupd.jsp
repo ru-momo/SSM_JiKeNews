@@ -14,7 +14,7 @@
     <title>修改用户信息</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 引入 Bootstrap -->
-    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/static/backEnd/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
@@ -40,6 +40,11 @@
         手机号：<input type="text" name="telphone" value="${userInfo.telphone}" ><br><br><br>
         <input class="btn btn-primary m-r-5" href="#!" type="submit" value="修改">
     </form>
-
+    <script type="text/javascript">
+        var user = '<%=session.getAttribute("user")%>';
+        if (user === 'null' || user === ''){
+            window.location.href = "http://localhost:8080/SSM_JIKENews_war_exploded/";
+        }
+    </script>
 </div>
 

@@ -36,7 +36,7 @@
             <!-- logo -->
             <div id="logo" class="sidebar-header">
                 <a href="${pageContext.request.contextPath}/end/index"><img
-                        src="${pageContext.request.contextPath}/static/images/logo-sidebar.png" title="LightYear"
+                        src="${pageContext.request.contextPath}/static/backEnd/images/logo-sidebar.png" title="LightYear"
                         alt="LightYear"/></a>
             </div>
             <div class="lyear-layout-sidebar-scroll">
@@ -82,7 +82,7 @@
                         <li class="dropdown dropdown-profile">
                             <a href="javascript:void(0)" data-toggle="dropdown">
                                 <img class="img-avatar img-avatar-48 m-r-10"
-                                     src="${pageContext.request.contextPath}/static/images/users/avatar.jpg"
+                                     src="${pageContext.request.contextPath}/static/backEnd/images/users/avatar.jpg"
                                      alt="笔下光年"/>
                                 <span><%=session.getAttribute("user")%> <span class="caret"></span></span>
                             </a>
@@ -92,7 +92,7 @@
                                 <li><a href="${pageContext.request.contextPath}/end/pagesEditPwd"><i
                                         class="mdi mdi-lock-outline"></i> 修改密码</a></li>
                                 <li class="divider"></li>
-                                <li><a href="${pageContext.request.contextPath}/end/pagesLogin"><i
+                                <li><a href="${pageContext.request.contextPath}/end/logout"><i
                                         class="mdi mdi-logout-variant"></i> 退出登录</a></li>
                             </ul>
                         </li>
@@ -270,8 +270,7 @@
                                     </div>
                                 </form>
                                 <div class="toolbar-btn-action">
-                                    <a data-toggle="modal" data-target="#myModal" class="btn btn-primary m-r-5"><i
-                                            class="mdi mdi-plus"></i> 新增</a>
+<%--                                    <a data-toggle="modal" data-target="#myModal" class="btn btn-primary m-r-5"><i class="mdi mdi-plus"></i> 新增</a>--%>
                                     <a class="btn btn-success m-r-5" href="#!"><i class="mdi mdi-check"></i> 启用</a>
                                     <a class="btn btn-warning m-r-5" href="#!"><i class="mdi mdi-block-helper"></i>
                                         禁用</a>
@@ -412,9 +411,14 @@
 
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/bootstrap.min.js"></script>
-<script type="text/javascript"
-        src="${pageContext.request.contextPath}/static/backEnd/js/perfect-scrollbar.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/perfect-scrollbar.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/main.min.js"></script>
+<script type="text/javascript">
+    var user = '<%=session.getAttribute("user")%>';
+    if (user === 'null' || user === ''){
+        window.location.href = "http://localhost:8080/SSM_JIKENews_war_exploded/";
+    }
+</script>
 <script type="text/javascript">
     $(function () {
         $('.search-bar .dropdown-menu a').click(function () {

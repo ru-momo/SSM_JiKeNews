@@ -82,7 +82,7 @@
                                 <li> <a href="${pageContext.request.contextPath}/end/pagesProfileLogin"><i class="mdi mdi-account"></i> 个人信息</a> </li>
                                 <li> <a href="${pageContext.request.contextPath}/end/pagesEditPwd"><i class="mdi mdi-lock-outline"></i> 修改密码</a> </li>
                                 <li class="divider"></li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesLogin"><i class="mdi mdi-logout-variant"></i> 退出登录</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/logout"><i class="mdi mdi-logout-variant"></i> 退出登录</a> </li>
                             </ul>
                         </li>
                         <!--切换主题配色-->
@@ -448,7 +448,7 @@
 
 <script type="text/javascript">
     var user = '<%=session.getAttribute("user")%>';
-    if (users === 'null' || users === ''){
+    if (user === 'null' || user === ''){
         window.location.href = "http://localhost:8080/SSM_JIKENews_war_exploded/";
     }
 </script>

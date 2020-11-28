@@ -88,7 +88,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/bootstrap.min.js"></script>
 <script type="text/javascript">
     var user = '<%=session.getAttribute("user")%>';
-    if (users === 'null' || users === ''){
+    if (user === 'null' || user === ''){
     }else {
         window.location.href = "http://localhost:8080/SSM_JIKENews_war_exploded/end/index";
     }
