@@ -29,7 +29,7 @@
 
             <!-- logo -->
             <div id="logo" class="sidebar-header">
-                <a href="index.html"><img src="${pageContext.request.contextPath}/static/backEnd/images/logo-sidebar.png" title="LightYear" alt="LightYear" /></a>
+                <a href="${pageContext.request.contextPath}/end/index"><img src="${pageContext.request.contextPath}/static/backEnd/images/logo-sidebar.png" title="LightYear" alt="LightYear" /></a>
             </div>
             <div class="lyear-layout-sidebar-scroll">
 
@@ -39,14 +39,11 @@
                         <li class="nav-item nav-item-has-subnav">
                             <a href="javascript:void(0)"><i class="mdi mdi-file-outline"></i> 示例页面</a>
                             <ul class="nav nav-subnav">
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesDoc">文档列表</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesGallery">图库列表</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesConfig">网站配置</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesRabc">设置权限</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesAddDoc">新增文档</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesGuide">表单向导</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesLogin">登录页面</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesError">错误页面</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/userinfo">用户管理</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesnews">新闻管理</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesImg">新闻图片管理</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesAddDoc">添加新闻</a> </li>
+                                <li> <a href="${pageContext.request.contextPath}/end/pagesRabc">用户权限</a> </li>
                             </ul>
                         </li>
                     </ul>
@@ -76,12 +73,11 @@
                         <li class="dropdown dropdown-profile">
                             <a href="javascript:void(0)" data-toggle="dropdown">
                                 <img class="img-avatar img-avatar-48 m-r-10" src="${pageContext.request.contextPath}/static/backEnd/images/users/avatar.jpg" alt="笔下光年" />
-                                <span>笔下光年 <span class="caret"></span></span>
+                                <span><%=session.getAttribute("user")%> <span class="caret"></span></span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-right">
                                 <li> <a href="${pageContext.request.contextPath}/end/pagesProfileLogin"><i class="mdi mdi-account"></i> 个人信息</a> </li>
                                 <li> <a href="${pageContext.request.contextPath}/end/pagesEditPwd"><i class="mdi mdi-lock-outline"></i> 修改密码</a> </li>
-                                <li> <a href="javascript:void(0)"><i class="mdi mdi-delete"></i> 清空缓存</a></li>
                                 <li class="divider"></li>
                                 <li> <a href="${pageContext.request.contextPath}/end/pagesLogin"><i class="mdi mdi-logout-variant"></i> 退出登录</a> </li>
                             </ul>
@@ -251,23 +247,23 @@
                                 <form method="post" action="#!" class="site-form">
                                     <div class="form-group">
                                         <label for="username">用户名</label>
-                                        <input type="text" class="form-control" name="username" id="username" value="lightyear"
+                                        <input type="text" class="form-control" name="username" id="username" value="<%=session.getAttribute("user")%>"
                                                disabled="disabled" />
                                     </div>
                                     <div class="form-group">
                                         <label for="nickname">昵称</label>
                                         <input type="text" class="form-control" name="nickname" id="nickname" placeholder="输入您的昵称"
-                                               value="笔下光年">
+                                               value="${userInfo.name}">
                                     </div>
                                     <div class="form-group">
                                         <label for="email">邮箱</label>
                                         <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp"
-                                               placeholder="请输入正确的邮箱地址" value="3331653644@qq.com">
+                                               placeholder="请输入正确的邮箱地址" value="${userInfo.email}">
                                         <small id="emailHelp" class="form-text text-muted">请保证您填写的邮箱地址是正确的。</small>
                                     </div>
                                     <div class="form-group">
                                         <label for="remark">简介</label>
-                                        <textarea class="form-control" name="remark" id="remark" rows="3"></textarea>
+                                        <textarea class="form-control" name="remark" id="remark" rows="3">${userInfo.information}</textarea>
                                     </div>
                                     <button type="submit" class="btn btn-primary">保存</button>
                                 </form>

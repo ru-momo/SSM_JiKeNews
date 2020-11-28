@@ -18,6 +18,8 @@
     <script type="text/javascript" src="static/frontEnd/index/main.js"></script>
     <script type="text/javascript" src="static/frontEnd/index/top.js"></script>
 </head>
+
+
 <body>
 
 <div class="navbar navbar-default">
@@ -39,11 +41,26 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="front/login">登陆</a></li>
                 <li><a href="front/signup">注册</a></li>
-                <li><a href="${pageContext.request.contextPath}/end/index">后台</a></li>
+                <li><a href="${pageContext.request.contextPath}/end/pagesLogin">后台</a></li>
             </ul>
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    var users = '<%=session.getAttribute("user") %>';
+    console.log(users)
+    if (users === 'null' || users === ''){
+
+    }else {
+        var nav = $(".nav.navbar-nav.navbar-right");
+        nav.empty();
+        var html = "<li><a href='${pageContext.request.contextPath}/end/index?user="+users+" '>"+users+"</a></li>" +
+            "<li><a href='front/logout'>退出登录</a></li>";
+        nav.append(html);
+    }
+</script>
+
 <div class="container">
     <div class="row">
         <div class="col-sm-2">
@@ -179,4 +196,5 @@
     iii.className='playIframe';
     $("#bfq").after(iii);
 </script>
+
 </html>

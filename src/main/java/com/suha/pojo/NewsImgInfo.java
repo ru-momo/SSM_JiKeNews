@@ -2,6 +2,8 @@ package com.suha.pojo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -19,7 +21,10 @@ public class NewsImgInfo implements Serializable {
     private Integer newsId;
     private String img;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date pubdate;
+    private String type;
+    private Integer state;
 
 }

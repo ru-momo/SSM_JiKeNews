@@ -1,7 +1,10 @@
 package com.suha.pojo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.suha.util.MyDate;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,9 +23,14 @@ public class NewsInfo {
     private String introduction;   //描述
     private String content;    //内容
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date pubdate;     //发布日期
     private Integer state;    //状态
+
+    private String getDate(Date date){
+        return MyDate.dateToString(date);
+    }
 
 
 }

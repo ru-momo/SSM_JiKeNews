@@ -64,7 +64,7 @@
             <div class="login-header text-center">
                 <a href="${pageContext.request.contextPath}/end/index"> <img alt="light year admin" src="${pageContext.request.contextPath}/static/backEnd/images/logo-sidebar.png"> </a>
             </div>
-            <form action="#!" method="post">
+            <form>
                 <div class="form-group has-feedback feedback-left">
                     <input type="text" placeholder="请输入您的用户名" class="form-control" name="username" id="username" />
                     <span class="mdi mdi-account form-control-feedback" aria-hidden="true"></span>
@@ -73,28 +73,42 @@
                     <input type="password" placeholder="请输入密码" class="form-control" id="password" name="password" />
                     <span class="mdi mdi-lock form-control-feedback" aria-hidden="true"></span>
                 </div>
-                <div class="form-group has-feedback feedback-left row">
-                    <div class="col-xs-7">
-                        <input type="text" name="captcha" class="form-control" placeholder="验证码">
-                        <span class="mdi mdi-check-all form-control-feedback" aria-hidden="true"></span>
-                    </div>
-                    <div class="col-xs-5">
-                        <img src="${pageContext.request.contextPath}/static/backEnd/images/captcha.png" class="pull-right" id="captcha" style="cursor: pointer;" onclick="this.src=this.src+'?d='+Math.random();" title="点击刷新" alt="captcha">
-                    </div>
-                </div>
                 <div class="form-group">
-                    <button class="btn btn-block btn-primary" type="button" onclick="location.href='${pageContext.request.contextPath}/end/index'">立即登录</button>
+                    <button class="btn btn-block btn-primary" type="button" onclick="login()">立即登录</button>
                 </div>
             </form>
             <hr>
             <footer class="col-sm-12 text-center">
-                <p class="m-b-0">Copyright © 2019 <a href="http://lyear.itshubao.com">IT书包</a>. All right reserved</p>
+                <p class="m-b-0">Copyright © 2020 <a href="#">IT书包</a>. All right reserved</p>
             </footer>
         </div>
     </div>
 </div>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/bootstrap.min.js"></script>
-<script type="text/javascript">;</script>
+<script type="text/javascript">
+    var user = '<%=session.getAttribute("user")%>';
+    if (users === 'null' || users === ''){
+    }else {
+        window.location.href = "http://localhost:8080/SSM_JIKENews_war_exploded/end/index";
+    }
+
+    function login() {
+        var name = $("#username").val();
+        var pass = $("#password").val();
+        $.ajax({
+            url:"login",
+            type:"post",
+            data:{username:name,password:pass},
+            success:function (data) {
+                if(data.code == 200){
+                    window.location.href = "http://localhost:8080/SSM_JIKENews_war_exploded/end/index";
+                }else {
+                    alert(data.data);
+                }
+            }
+        })
+    }
+</script>
 </body>
 </html>

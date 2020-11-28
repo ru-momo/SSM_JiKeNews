@@ -5,6 +5,9 @@
     <title>登陆</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/frontEnd/css/bootstrap.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/frontEnd/css/main.css">
+    <script type="text/javascript" src="${pageContext.request.contextPath}/static/frontEnd/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/static/frontEnd/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/static/frontEnd/index/login.js"></script>
 
 </head>
 <body>
@@ -31,14 +34,14 @@
     <h1>登录
         <small>没有帐号？<a href="${pageContext.request.contextPath}/front/signup">注册</a></small>
     </h1>
-    <form action="login">
+    <form id="form">
         <div class="form-group">
             <label>用户名</label>
-            <input type="text" name="userName" required  lay-verify="required" autocomplete="off" placeholder="请输入用户" class="form-control">
+            <input id="name" type="text" name="userName" required  lay-verify="required" autocomplete="off" placeholder="请输入用户" class="form-control">
         </div>
         <div class="form-group">
             <label>密码</label>
-            <input type="password" name="password" required  lay-verify="required" autocomplete="off" placeholder="请输入密码" class="form-control">
+            <input id="password" type="password" name="password" required  lay-verify="required" autocomplete="off" placeholder="请输入密码" class="form-control">
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-block">登录</button>
@@ -47,7 +50,7 @@
     </form>
 </div>
 <div class="footer">
-    Copyright © 2020 jkdev.cn | 极客开发者2020版
+    Copyright © 2020 | 极客开发者2020版
 </div>
 </body>
 </html>

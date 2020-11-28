@@ -12,6 +12,9 @@
     <title>注册</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/frontEnd/css/bootstrap.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/frontEnd/css/main.css">
+    <script type="text/javascript" src="${pageContext.request.contextPath}/static/frontEnd/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/static/frontEnd/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/static/frontEnd/index/signup.js"></script>
 </head>
 <body>
 <div class="navbar navbar-default">
@@ -36,34 +39,29 @@
     <h1>注册
         <small>已有帐号，<a href="${pageContext.request.contextPath}/front/login">登录</a></small>
     </h1>
-    <form>
+    <form id="form">
         <div class="form-group">
-            <label>手机</label>
-            <input type="text" class="form-control">
-        </div>
-        <div class="form-group">
-            <label>验证码</label>
-            <div class="input-group">
-                <input type="text" class="form-control">
-                <div class="input-group-btn">
-                    <div class="btn btn-default">获取验证码</div>
-                </div>
-            </div>
+            <label>用户名</label>
+            <input id="name" type="text" class="form-control">
         </div>
         <div class="form-group">
             <label>密码</label>
-            <input type="password" class="form-control">
+            <input id="pass" type="password" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>确认密码</label>
+            <input id="ipass" type="password" class="form-control">
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-block">注册</button>
         </div>
         <div class="form-group">
-            注册极客开发者头条即代表您同意<a href="${pageContext.request.contextPath}/front/agreement">极客开发者服务条款</a>
+            注册极客开发者头条即代表您同意<a href="#">极客开发者服务条款</a>
         </div>
     </form>
 </div>
 <div class="footer">
-    Copyright © 2017 jkdev.cn | 极客开发者2017版
+    Copyright © 2020 | 极客开发者2020版
 </div>
 </body>
 </html>

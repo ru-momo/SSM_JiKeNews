@@ -8,26 +8,33 @@
         <result column="news_id" jdbcType="INTEGER" property="newsId"/>
         <result column="img" jdbcType="VARCHAR" property="img"/>
         <result column="pubdate" jdbcType="TIMESTAMP" property="pubdate"/>
+        <result column="type" jdbcType="VARCHAR" property="type"/>
+        <result column="state" jdbcType="INTEGER" property="state"/>
 
     </resultMap>
 
     <!-- SQL语句 -->
     <sql id="news_type_where">
         <where>
-            <if test="type !=null and type!=''">
-                and type like '%${type}'
+            <if test="name !=null and name!=''">
+                and type like '%${name}'
             </if>
             and state = 1
         </where>
     </sql>
 
+    <sql id="news_type_where2">
+        <where>
+            <if test="name !=null and name!=''">
+                and type like '%${name}'
+            </if>
+        </where>
+    </sql>
+
     <!--图片的分页查询 -->
     <select id="getListInfoByPage" parameterType="map" resultMap="ResultMap">
-        select id, newsId, img from news_img_info where 1=1
-
-            <if test="img != null and img!= ''">
-                and img like '%${name}%'
-            </if>
+        select id, news_id, img, pubdate, type, state from news_img_info
+            <include refid="news_type_where2"></include>
             order by pubdate desc
             <if test="startIndex != null and pageSize != null">
                 limit #{startIndex}, #{pageSize}
@@ -39,7 +46,7 @@
     <select id="getListCountByPage" parameterType="map" resultType="int">
         select count(id) from news_img_info where 1=1
             <if test="img != null and img != ''">
-                and  and img like '%${name}%'
+                and img like '%${name}%'
             </if>
 
     </select>
@@ -55,7 +62,7 @@
 
     <!-- 根据类别查询 -->
     <select id="getListForNav" parameterType="map" resultMap="ResultMap">
-        select id, news_id, img, pubdate from news_img_info
+        select id, news_id, img, pubdate, type, state from news_img_info
         <include refid="news_type_where"></include>
         order by pubdate desc
         <if test="startIndex !=null and pageSize !=null">

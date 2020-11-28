@@ -1,5 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
+<%@ page import="com.suha.util.MyDate" %><%--
   Created by IntelliJ IDEA.
   User: Administrator
   Date: 2020/11/12
@@ -7,12 +6,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="zh">
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>文档列表 - 光年(Light Year Admin)后台管理系统模板</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>新闻管理 - 光年(Light Year Admin)后台管理系统模板</title>
     <link rel="icon" href="${pageContext.request.contextPath}/static/backEnd/favicon.ico" type="image/ico">
     <meta name="keywords" content="LightYear,光年,后台模板,后台管理系统,光年HTML模板">
     <meta name="description" content="LightYear是一个基于Bootstrap v3.3.7的后台管理系统的HTML模板。">
@@ -22,6 +22,11 @@
     <link href="${pageContext.request.contextPath}/static/backEnd/css/style.min.css" rel="stylesheet">
 </head>
 
+<style>
+
+    td {white-space:nowrap;overflow:hidden;text-overflow: ellipsis;}
+</style>
+
 <body>
 <div class="lyear-layout-web">
     <div class="lyear-layout-container">
@@ -30,25 +35,29 @@
 
             <!-- logo -->
             <div id="logo" class="sidebar-header">
-                <a href="${pageContext.request.contextPath}/end/index"><img src="${pageContext.request.contextPath}/static/backEnd/images/logo-sidebar.png" title="LightYear" alt="LightYear" /></a>
+                <a href="${pageContext.request.contextPath}/end/index"><img
+                        src="${pageContext.request.contextPath}/static/images/logo-sidebar.png" title="LightYear"
+                        alt="LightYear"/></a>
             </div>
             <div class="lyear-layout-sidebar-scroll">
 
                 <nav class="sidebar-main">
                     <ul class="nav nav-drawer">
-                        <li class="nav-item"> <a href="${pageContext.request.contextPath}/end/index"><i class="mdi mdi-home"></i> 后台首页</a> </li>
+                        <li class="nav-item"><a href="${pageContext.request.contextPath}/end/index"><i
+                                class="mdi mdi-home"></i> 后台首页</a></li>
                         <li class="nav-item nav-item-has-subnav active open">
                             <a href="javascript:void(0)"><i class="mdi mdi-file-outline"></i> 示例页面</a>
                             <ul class="nav nav-subnav">
-                                <li class="active"> <a href="${pageContext.request.contextPath}/end/userinfo">用户管理</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesnews">新闻管理</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesImg">新闻图片管理</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesAddDoc">添加新闻</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesRabc">用户权限</a> </li>
+                                <li><a href="${pageContext.request.contextPath}/end/userinfo">用户管理</a></li>
+                                <li class="active"><a href="${pageContext.request.contextPath}/end/pagesnews">新闻管理</a></li>
+                                <li><a href="${pageContext.request.contextPath}/end/pagesImg">新闻图片管理</a></li>
+                                <li><a href="${pageContext.request.contextPath}/end/pagesAddDoc">添加新闻</a></li>
+                                <li><a href="${pageContext.request.contextPath}/end/pagesRabc">用户权限</a></li>
                             </ul>
                         </li>
                     </ul>
                 </nav>
+
             </div>
 
         </aside>
@@ -66,20 +75,25 @@
                             <span class="lyear-toggler-bar"></span>
                             <span class="lyear-toggler-bar"></span>
                         </div>
-                        <span class="navbar-page-title"> 示例页面 - 文档列表 </span>
+                        <span class="navbar-page-title"> 新闻管理 </span>
                     </div>
 
                     <ul class="topbar-right">
                         <li class="dropdown dropdown-profile">
                             <a href="javascript:void(0)" data-toggle="dropdown">
-                                <img class="img-avatar img-avatar-48 m-r-10" src="${pageContext.request.contextPath}/static/backEnd/images/users/avatar.jpg" alt="笔下光年" />
+                                <img class="img-avatar img-avatar-48 m-r-10"
+                                     src="${pageContext.request.contextPath}/static/images/users/avatar.jpg"
+                                     alt="笔下光年"/>
                                 <span><%=session.getAttribute("user")%> <span class="caret"></span></span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-right">
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesProfileLogin"><i class="mdi mdi-account"></i> 个人信息</a> </li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesEditPwd"><i class="mdi mdi-lock-outline"></i> 修改密码</a> </li>
+                                <li><a href="${pageContext.request.contextPath}/end/pagesProfileLogin"><i
+                                        class="mdi mdi-account"></i> 个人信息</a></li>
+                                <li><a href="${pageContext.request.contextPath}/end/pagesEditPwd"><i
+                                        class="mdi mdi-lock-outline"></i> 修改密码</a></li>
                                 <li class="divider"></li>
-                                <li> <a href="${pageContext.request.contextPath}/end/pagesLogin"><i class="mdi mdi-logout-variant"></i> 退出登录</a> </li>
+                                <li><a href="${pageContext.request.contextPath}/end/pagesLogin"><i
+                                        class="mdi mdi-logout-variant"></i> 退出登录</a></li>
                             </ul>
                         </li>
                         <!--切换主题配色-->
@@ -230,6 +244,7 @@
 
             <div class="container-fluid">
 
+
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
@@ -237,151 +252,153 @@
                                 <form class="pull-right search-bar" method="get" action="#!" role="form">
                                     <div class="input-group">
                                         <div class="input-group-btn">
-                                            <input type="hidden" name="search_field" id="search-field" value="username">
-                                            <button class="btn btn-default dropdown-toggle" id="search-btn" data-toggle="dropdown"
+                                            <input type="hidden" name="search_field" id="search-field" value="newsid">
+                                            <button class="btn btn-default dropdown-toggle" id="search-btn"
+                                                    data-toggle="dropdown"
                                                     type="button" aria-haspopup="true" aria-expanded="false">
-                                                用户名 <span class="caret"></span>
+                                                新闻编号 <span class="caret"></span>
                                             </button>
                                             <ul class="dropdown-menu">
-                                                <li> <a tabindex="-1" href="javascript:void(0)" data-field="username">用户名</a> </li>
-                                                <li> <a tabindex="-1" href="javascript:void(0)" data-field="phone">手机号</a> </li>
+                                                <li><a tabindex="-1" href="javascript:void(0)" data-field="newsid">新闻编号</a>
+                                                </li>
+                                                <li><a tabindex="-1" href="javascript:void(0)"
+                                                       data-field="id">序号</a></li>
                                             </ul>
                                         </div>
-                                        <input type="text" class="form-control" value="" name="keyword" placeholder="请输入">
+                                        <input type="text" class="form-control" value="" name="keyword"
+                                               placeholder="请输入">
                                     </div>
                                 </form>
                                 <div class="toolbar-btn-action">
-                                    <a data-toggle="modal" data-target="#addModal" class="btn btn-primary m-r-5" href="#!"><i class="mdi mdi-plus"></i> 新增</a>
+                                    <a data-toggle="modal" data-target="#myModal" class="btn btn-primary m-r-5"><i
+                                            class="mdi mdi-plus"></i> 新增</a>
                                     <a class="btn btn-success m-r-5" href="#!"><i class="mdi mdi-check"></i> 启用</a>
-                                    <a class="btn btn-warning m-r-5" href="#!"><i class="mdi mdi-block-helper"></i> 禁用</a>
-                                    <a class="btn btn-danger" href="#!"><i class="mdi mdi-window-close"></i> 删除</a>
+                                    <a class="btn btn-warning m-r-5" href="#!"><i class="mdi mdi-block-helper"></i>
+                                        禁用</a>
+                                    <a class="btn btn-danger" title="删除" href="javascript:void(0)" onclick="del()"
+                                       id="delSelected"><i class="mdi mdi-window-close"></i> 批量删除</a>
                                 </div>
                             </div>
                             <div class="card-body">
 
                                 <div class="table-responsive">
-                                    <table class="table table-bordered">
+                                    <table class="table table-bordered" style="table-layout: fixed;">
                                         <thead>
                                         <tr>
                                             <th>
                                                 <label class="lyear-checkbox checkbox-primary">
-                                                    <input type="checkbox" id="check-all"><span></span>
+                                                    <input type="checkbox" id="all"><span></span>
                                                 </label>
                                             </th>
-                                            <th>编号</th>
-                                            <th>用户名</th>
-                                            <th>密码</th>
-                                            <th>姓名</th>
-                                            <th>邮箱</th>
-                                            <th>信息</th>
-                                            <th>手机号</th>
+                                            <th>新闻编号</th>
+                                            <th>类型</th>
+                                            <th>标题</th>
+                                            <th>描述</th>
+                                            <th>内容</th>
+                                            <th>发布日期</th>
+                                            <th>状态</th>
                                             <th>操作</th>
-
-
                                         </tr>
                                         </thead>
-<%--                                        <%--%>
-<%--                                            System.out.println(pageContext.getAttribute("page"));--%>
-<%--                                        %>--%>
-<%--                                        ${page.rows}--%>
-
-                                        <c:forEach items="${page.rows}" var="user">
+                                        <tbody>
+                                        <%-- <%
+                                             System.out.println(pageContext.getAttribute("page"));
+                                         %>--%>
+                                        <c:forEach items="${page.rows}" var="page">
                                             <tr>
                                                 <td>
                                                     <label class="lyear-checkbox checkbox-primary">
-                                                        <input type="checkbox" name="id" value="${user.id}" ><span></span>
+                                                        <input type="checkbox" name="id"
+                                                               value="${page.id}"><span></span>
                                                     </label>
                                                 </td>
-                                                <td>${user.id}</td>
-                                                <td>${user.userName}</td>
-                                                <td>${user.password}</td>
-                                                <td>${user.name}</td>
-                                                <td>${user.email}</td>
-                                                <td>${user.information}</td>
-                                                <td>${user.telphone}</td>
-
+                                                <td>${page.id}</td>
+                                                <td>${page.type}</td>
+                                                <td>${page.title}</td>
+                                                <td>${page.introduction}</td>
+                                                <td>${page.content}</td>
+                                                <td></td>
                                                 <td>
-<%--                                                    <a onclick="updInfo(${user.id})" href="${pageContext.request.contextPath}/end/userupd?id=${user.id()}" class="btn btn-warning">编辑</a>--%>
-                                                    <a href="${pageContext.request.contextPath}/end/toUpdataUser?id=${user.id}" class="btn btn-warning">编辑</a>
-                                                    <a href="javascript:void(0)" onclick="del(${user.id})" class="btn btn-danger">删除</a>
+                                                    <c:if test="${page.state == 1}">
+                                                        <font class="text-success">正常</font>
+                                                    </c:if>
+                                                    <c:if test="${page.state == 0}">
+                                                        <font class="text-danger">失效</font>
+                                                    </c:if>
+                                                </td>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <a class="btn btn-xs btn-default" href="javascript:void(0)"
+                                                           onclick="delInfo(${page.id})" title="删除"
+                                                           data-toggle="tooltip"><i
+                                                                class="mdi mdi-window-close"></i></a>
+                                                    </div>
                                                 </td>
                                             </tr>
-                                        </c:forEach>
 
+                                        </c:forEach>
+                                        </tbody>
                                     </table>
+                                </div>
+                                <ul class="pagination">
+                                    <li>
+                                        <a href='pagesnews?pageNum=${page.page+1}&name=${name}' ${page.page == page.total ? "style='visibility: hidden;'" : ""}
+                                           onclick="return click(this)">下一页</a></li>
+                                    <c:forEach begin="1" end="${page.total}" var="num">
+                                        <c:if test="${page.page == num}">
+                                            <li class="active"><span>${num}</span></li>
+                                        </c:if>
+                                        <c:if test="${page.page != num}">
+                                            <li><a href='pagesnews?pageNum=${num}&name=${name}'>${num}</a></li>
+                                        </c:if>
+                                    </c:forEach>
+                                    <li><a href='pagesnews?pageNum=${page.total}' &name='${name}'>最后一页</a></li>
+                                </ul>
 
-                                    <ul class="pagination">
-                                        <li>
-                                            <a href='pagesImg?pageNum=${page.page+1}&name=${name}' ${page.page == page.total ? "style='visibility: hidden;'" : ""}
-                                               onclick="return click(this)">下一页</a></li>
-                                        <c:forEach begin="1" end="${page.total}" var="num">
-                                            <c:if test="${page.page == num}">
-                                                <li class="active"><span>${num}</span></li>
-                                            </c:if>
-                                            <c:if test="${page.page != num}">
-                                                <li><a href='pagesImg?pageNum=${num}&name=${name}'>${num}</a></li>
-                                            </c:if>
-                                        </c:forEach>
-                                        <li><a href='pagesImg?pageNum=${page.total}' &name='${name}'>最后一页</a></li>
-                                    </ul>
 
-
-                                            <!-- 添加模态框（Modal） -->
-                                            <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                                                &times;
-                                                            </button>
-                                                            <h4 class="modal-title" id="myModalLabel">
-                                                                新增用户信息
-                                                            </h4>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <form id="addfrm" method="post">
-                                                                <label for="userName">
-                                                                    用户名: <input type="text" name="userName" id="userName" />
-                                                                </label>
-                                                                <br />
-                                                                <label for="password">
-                                                                    密码: <input type="password" name="password" id="password"/>
-                                                                </label>
-                                                                <br />
-                                                                <label for="name">
-                                                                    姓名: <input type="text" name="name" id="name" />
-                                                                </label>
-                                                                <br />
-                                                                <label for="email">
-                                                                    邮箱: <input type="text" name="email" id="email" />
-                                                                </label>
-                                                                <br />
-                                                                <label for="information">
-                                                                    信息: <input type="text" name="information" id="information"/>
-                                                                </label>
-                                                                <br />
-                                                                <label for="telphone">
-                                                                    手机号: <input type="text" name="telphone" id="telphone" />
-                                                                </label>
-                                                                <br />
-                                                            </form>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭
-                                                            </button>
-                                                            <button type="button" id="addBtn" class="btn btn-primary" >
-                                                                添加
-                                                            </button>
-                                                        </div>
-                                                    </div><!-- /.modal-content -->
-                                                </div><!-- /.modal -->
+                                <!-- 模态框（Modal） -->
+                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+                                     aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-hidden="true">
+                                                    &times;
+                                                </button>
+                                                <h4 class="modal-title" id="myModalLabel">
+                                                    新增图片信息
+                                                </h4>
                                             </div>
+                                            <div class="modal-body">
+                                                <form id="frm" enctype="multipart/form-data" method="post"
+                                                      onsubmit="return sumbit_sure()">
 
-                                    </table>
+                                                    <label for="newsId">
+                                                        新闻编号:<input type="text" name="newsId" id="newsId"/>
+                                                    </label>
+                                                    <br/>
+                                                    <label for="img">
+                                                        图片:<input type="file" name="img" id="img"/>
+                                                    </label>
+                                                    <br/>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                                                </button>
+                                                <button type="button" id="btnComm" class="btn btn-primary">
+                                                    添加
+                                                </button>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal -->
                                 </div>
 
                             </div>
+
                         </div>
+
                     </div>
 
                 </div>
@@ -395,7 +412,8 @@
 
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/perfect-scrollbar.min.js"></script>
+<script type="text/javascript"
+        src="${pageContext.request.contextPath}/static/backEnd/js/perfect-scrollbar.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/backEnd/js/main.min.js"></script>
 <script type="text/javascript">
     $(function () {
@@ -406,51 +424,113 @@
         });
     });
 
-    //删除用户
-    function del(id) {
-        if(confirm("确定要删除吗？")){
+
+    function delInfo(id) {
+        if (confirm("确定要删除吗？")) {
             $.ajax({
-                url:"del?id=" + id,
-                type:"get",
-                success:function (data) {
-                    if(data.code == 200){
+                url: "delInfo?id=" + id,
+                type: "get",
+                success: function (data) {
+                    if (data.code == 200) {
                         alert("删除成功");
-                        window.location.href="userinfo";
-                    }else {
+                        window.location.href = "pagesImg";
+                    } else {
                         alert(data.data);
                     }
                 }
             })
         }
     }
-    //添加用户
-    //id选择器  class选择器
-    $(function () {
-        $("#addBtn").click(function () {
-            //表单内容序列化
-            var data = $("#addfrm").serialize();
-            console.log(data);
-            $.ajax({
-                url: "adduser",
-                type: "post",
-                data:data,
-                success:function (data) {
-                    if (data.user == "ok"){
-                        //添加成功，提示成功，跳转页面
-                        //重新加载页面
-                        window.location = "userinfo";
-                    }
-                    else {
-                        alert(data.user);
-                    }
-                }
 
+
+    $(function () {
+        $("#btnComm").click(function () {
+            //alert("11111")
+            //表单内容序列化  参数名=参数值& 参数名=参数值
+            var data = $("#frm").serialize();
+            var formData = new FormData($("#frm")[0])
+            console.log(data);
+            alert(data)
+            $.ajax({
+                url: "addInfo",
+                type: "post",
+                data: formData,
+                contentType: "json", //必须
+                processData: false, //必须
+                success: function (data) {
+                    alert("更新成功")
+                    console.log(data)
+                    // window.location.reload();
+                }
             });
         });
     });
 
 
+    //全选
+    var oall = document.getElementById("all");
+    var oid = document.getElementsByName("id");
+    oall.onclick = function () {//勾选全选时
+        for (var i = 0; i < oid.length; i++) {
+            //所有的选择框和全选一致
+            oid[i].checked = oall.checked;
+        }
+    };
+    //点击复选框
+    for (var i = 0; i < oid.length; i++) {
+        oid[i].onclick = function () {
+            //判断是否全部选中,遍历集合
+            for (var j = 0; j < oid.length; j++) {
+                if (oid[j].checked == false) {
+                    oall.checked = false;
+                    break;
+                } else {
+                    oall.checked = true;
+                }
+            }
+        };
+    }
+
+    //批量删除
+    function del() {
+        var r = confirm("是否确认删除选中的信息？");
+        if (r == true) {
+            //确认删除
+            var ids = "";
+            var n = 0;
+            for (var i = 0; i < oid.length; i++) {
+                if (oid[i].checked == true) {//选中为true
+                    var id = oid[i].value;
+                    if (n == 0) {
+                        ids += "ids=" + id;
+                    } else {
+                        ids += "&ids=" + id;
+                    }
+                    n++;
+                }
+            }
+
+            $.get("deleteByIds", ids, function (data) {
+                if (data == "ok") {
+                    alert("删除成功!");
+                    //删除成功后，调用action方法刷新页面信息
+                    location.reload();
+                    $("input[name=id]").removeAttr("checked");
+                } else {
+                    alert("请选中要删除的信息!");
+                }
+            });
+            return true;
+        } else {
+            //不删除
+            return false;
+        }
+    }
+
+
 </script>
+
+
 </body>
 
 </html>
