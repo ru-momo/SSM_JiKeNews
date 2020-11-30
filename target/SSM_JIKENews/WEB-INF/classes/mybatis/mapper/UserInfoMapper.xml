@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.suha.mapper.UserInfoMapper">
+   <resultMap id="BaseResultMap" type="com.suha.pojo.UserInfo">
+       <id column="id" jdbcType="INTEGER" property="id" />
+       <result column="user_name" jdbcType="VARCHAR" property="userName" />
+       <result column="password" jdbcType="VARCHAR" property="password" />
+       <result column="name" jdbcType="VARCHAR" property="name" />
+       <result column="email" jdbcType="VARCHAR" property="email" />
+       <result column="information" jdbcType="VARCHAR" property="information"/>
+       <result column="telphone" jdbcType="VARCHAR" property="telphone"/>
+   </resultMap>
+
+    <sql id="user_info_where">
+        <where>
+            <if test="userName != null and userName != ''">
+                and lower(user_name) like lower(concat('%','${userName}','%'))
+            </if>
+        </where>
+    </sql>
+
+    <select id="login" resultMap="BaseResultMap">
+        select * from user_info where user_name=#{userName} and password=#{password}
+    </select>
+
+<!--    分页查询-->
+    <select id="getListInfoByPage" parameterType="map" resultMap="BaseResultMap">
+        select id , user_name , password , name,email,information,telphone from user_info
+        <include refid="user_info_where"></include>
+        <if test="startIndex != null and pageSize != null">
+            limit #{startIndex} , #{pageSize}
+        </if>
+    </select>
+
+<!--    按照条件查询总数据量-->
+    <select id="getListCountByPage" parameterType="map" resultType="int">
+        select count(id) from user_info
+        <include refid="user_info_where"></include>
+    </select>
+
+</mapper>
